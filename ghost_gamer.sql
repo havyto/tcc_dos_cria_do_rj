@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12/05/2026 às 19:08
+-- Tempo de geração: 02/06/2026 às 18:34
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -28,10 +28,10 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `biblioteca` (
-  `id_biblioteca` int(11) NOT NULL,
-  `id_jogo` int(11) DEFAULT NULL,
-  `id_cliente` int(11) DEFAULT NULL,
-  `DATA_DE_ADIÇÃO` datetime DEFAULT NULL
+  `ID_BIBLIOTECA` int(11) NOT NULL,
+  `ID_CLIENTE` int(11) DEFAULT NULL,
+  `ID_JOGO` int(11) DEFAULT NULL,
+  `DATA_DE_ADICAO` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -90,6 +90,23 @@ CREATE TABLE `cnpj` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `gpu`
+--
+
+CREATE TABLE `gpu` (
+  `id_gpu` int(11) NOT NULL,
+  `modelo` varchar(40) DEFAULT NULL,
+  `marca` varchar(20) DEFAULT NULL,
+  `fabricante` varchar(20) DEFAULT NULL,
+  `VRAM` int(10) UNSIGNED DEFAULT NULL,
+  `tipo_memoria` varchar(20) DEFAULT NULL,
+  `clock` int(10) UNSIGNED DEFAULT NULL,
+  `boost` int(10) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `jogo`
 --
 
@@ -97,31 +114,56 @@ CREATE TABLE `jogo` (
   `id_jogo` int(11) NOT NULL,
   `titulo` varchar(100) NOT NULL,
   `empresa_email` varchar(110) DEFAULT NULL,
-  `genero` varchar(50) DEFAULT NULL
+  `genero` varchar(110) DEFAULT NULL,
+  `nucleos` int(10) UNSIGNED DEFAULT NULL,
+  `threads` int(10) UNSIGNED DEFAULT NULL,
+  `frequencia` decimal(10,0) DEFAULT NULL,
+  `ram_gb` int(10) UNSIGNED DEFAULT NULL,
+  `vram_gb` int(10) UNSIGNED DEFAULT NULL,
+  `armazenamento` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Despejando dados para a tabela `jogo`
 --
 
-INSERT INTO `jogo` (`id_jogo`, `titulo`, `empresa_email`, `genero`) VALUES
-(1, 'Catapombas', 'LucasberingelaInc@gmail.com', NULL),
-(2, 'patutuinhas', 'LucasberingelaInc@gmail.com', ''),
-(3, 'adaadsad', 'LucasberingelaInc@gmail.com', ''),
-(4, 'gggggg', 'LucasberingelaInc@gmail.com', 'rpg'),
-(5, 'Metelon777', 'LucasberingelaInc@gmail.com', 'esporte, luta'),
-(6, 'Los Luchadores Pelados', 'LucasberingelaInc@gmail.com', 'acao, esporte, luta');
+INSERT INTO `jogo` (`id_jogo`, `titulo`, `empresa_email`, `genero`, `nucleos`, `threads`, `frequencia`, `ram_gb`, `vram_gb`, `armazenamento`) VALUES
+(2, 'patutuinhas', 'LucasberingelaInc@gmail.com', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 'adaadsad', 'LucasberingelaInc@gmail.com', '', NULL, NULL, NULL, NULL, NULL, NULL),
+(4, 'gggggg', 'LucasberingelaInc@gmail.com', 'rpg', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `suporte`
+-- Estrutura para tabela `memoria_ram`
 --
 
-CREATE TABLE `suporte` (
-  `ID_SUPORTE` int(11) NOT NULL,
-  `DESCRICAO` varchar(255) DEFAULT NULL,
-  `DATA_REQUERIMENTO` datetime DEFAULT NULL
+CREATE TABLE `memoria_ram` (
+  `id_ram` int(11) NOT NULL,
+  `MODELO` varchar(40) DEFAULT NULL,
+  `MARCA` varchar(20) DEFAULT NULL,
+  `CAPACIDADE` int(10) UNSIGNED DEFAULT NULL,
+  `TIPO` varchar(20) DEFAULT NULL,
+  `FREQUENCIA` int(10) UNSIGNED DEFAULT NULL,
+  `MODULOS` int(10) UNSIGNED DEFAULT NULL,
+  `LATENCIA` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `processador`
+--
+
+CREATE TABLE `processador` (
+  `id_processador` int(11) NOT NULL,
+  `modelo` varchar(40) DEFAULT NULL,
+  `marca` varchar(20) DEFAULT NULL,
+  `geracao` varchar(20) DEFAULT NULL,
+  `nucleo` int(10) UNSIGNED DEFAULT NULL,
+  `threads` int(10) UNSIGNED DEFAULT NULL,
+  `clock_base` decimal(4,2) DEFAULT NULL,
+  `boost` decimal(4,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -132,9 +174,9 @@ CREATE TABLE `suporte` (
 -- Índices de tabela `biblioteca`
 --
 ALTER TABLE `biblioteca`
-  ADD PRIMARY KEY (`id_biblioteca`),
-  ADD KEY `id_jogo` (`id_jogo`),
-  ADD KEY `id_cliente` (`id_cliente`);
+  ADD PRIMARY KEY (`ID_BIBLIOTECA`),
+  ADD KEY `ID_CLIENTE` (`ID_CLIENTE`),
+  ADD KEY `ID_JOGO` (`ID_JOGO`);
 
 --
 -- Índices de tabela `biblioteca_empresa`
@@ -156,20 +198,38 @@ ALTER TABLE `cnpj`
   ADD PRIMARY KEY (`id_cnpj`);
 
 --
+-- Índices de tabela `gpu`
+--
+ALTER TABLE `gpu`
+  ADD PRIMARY KEY (`id_gpu`);
+
+--
 -- Índices de tabela `jogo`
 --
 ALTER TABLE `jogo`
   ADD PRIMARY KEY (`id_jogo`);
 
 --
--- Índices de tabela `suporte`
+-- Índices de tabela `memoria_ram`
 --
-ALTER TABLE `suporte`
-  ADD PRIMARY KEY (`ID_SUPORTE`);
+ALTER TABLE `memoria_ram`
+  ADD PRIMARY KEY (`id_ram`);
+
+--
+-- Índices de tabela `processador`
+--
+ALTER TABLE `processador`
+  ADD PRIMARY KEY (`id_processador`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `biblioteca`
+--
+ALTER TABLE `biblioteca`
+  MODIFY `ID_BIBLIOTECA` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `biblioteca_empresa`
@@ -190,10 +250,28 @@ ALTER TABLE `cnpj`
   MODIFY `id_cnpj` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `gpu`
+--
+ALTER TABLE `gpu`
+  MODIFY `id_gpu` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `jogo`
 --
 ALTER TABLE `jogo`
   MODIFY `id_jogo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `memoria_ram`
+--
+ALTER TABLE `memoria_ram`
+  MODIFY `id_ram` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `processador`
+--
+ALTER TABLE `processador`
+  MODIFY `id_processador` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para tabelas despejadas
@@ -203,8 +281,8 @@ ALTER TABLE `jogo`
 -- Restrições para tabelas `biblioteca`
 --
 ALTER TABLE `biblioteca`
-  ADD CONSTRAINT `biblioteca_ibfk_1` FOREIGN KEY (`id_jogo`) REFERENCES `jogo` (`id_jogo`),
-  ADD CONSTRAINT `biblioteca_ibfk_2` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`);
+  ADD CONSTRAINT `biblioteca_ibfk_1` FOREIGN KEY (`ID_CLIENTE`) REFERENCES `clientes` (`id_cliente`),
+  ADD CONSTRAINT `biblioteca_ibfk_2` FOREIGN KEY (`ID_JOGO`) REFERENCES `jogo` (`id_jogo`);
 
 --
 -- Restrições para tabelas `biblioteca_empresa`
