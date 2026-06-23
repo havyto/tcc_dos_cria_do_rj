@@ -1,19 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Consulta no Banco</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta</title>
 </head>
 <body>
-<h1>Exibição de Dados</h1>
- 
-<form method="POST" action="consulta2.php" target="_blank">
-<br><br>
-    <input type="submit" name="acao1" value="Mostrar Empresas"><br><br>
-    <input type="submit" name="acao2" value="Mostrar Clientes"><br><br>
-    <input type="submit" name="acao3" value="Mostrar Jogos"><br><br>
-</form>
-<hr>
- 
+    <style>
+        tr, td{
+            width: 20%;
+        }
+    </style>
 <?php
 error_reporting(0);
 mysql_connect("localhost","root","");
@@ -205,6 +202,7 @@ if (!empty($_POST['acao1'])) {
 }
 ?>
  
- <a href="principal.php" class="button">Voltar</a>
+
 </body>
 </html>
+
