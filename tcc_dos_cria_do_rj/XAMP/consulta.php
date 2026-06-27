@@ -205,6 +205,6 @@ if (!empty($_POST['acao1'])) {
 }
 ?>
  
- <a href="principal.php" class="button">Voltar</a>
+ <a href="../index.php" class="button">Voltar</a>
 </body>
 </html>
