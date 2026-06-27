@@ -25,7 +25,7 @@ if (!mysql_query($sql)) {
     die("Erro no SQL: " . mysql_error());
 }
 	mysql_close($id);
-	header("location: ../index.html");
+	header("location: ../index.php");
 exit;
 
 

@@ -11,7 +11,7 @@
 
     <nav id="menu" class="menu">
         <ul>
-            <li><a href="../index.html">Home</a></li>
+             <li><a href="../index.php">Home</a></li>
             <li><a href="biblioteca.html">Biblioteca</a></li>
             <li><a href="categoria.html">Categoria</a></li>
             <li><a href="loginCliente.html">Login</a></li>
@@ -30,14 +30,14 @@
         <div class="login-wrapper">
             <div class="form-box login-box">
                 <h2>LOGIN</h2>
-                <form>
+                <form method="post" action="../XAMP/loginCliente.php">
                     <div class="input-group">
                         <label>Email</label>
-                        <input type="email" placeholder="Digite seu email">
+                        <input type="email" name="email" placeholder="Digite seu email">
                     </div>
                     <div class="input-group">
                         <label>Senha</label>
-                        <input type="password" placeholder="Digite sua senha">
+                        <input type="password" name="senha" placeholder="Digite sua senha">
                     </div>
                     <div class="checkbox-group">
                         <input type="checkbox" id="lembrar">

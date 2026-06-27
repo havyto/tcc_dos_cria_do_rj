@@ -29,7 +29,7 @@
           <input type="text" name="pais"  class="tam" size="40px" placeholder="Digite seu Pais" required/><br /><br />
 
 
-          <a href="principal.php" class="button">Voltar</a>
+          <a href="../index.php" class="button">Voltar</a>
           <input type="submit" class="button" value="GRAVAR"/>
           <input type="reset" class="button" value="Apagar" />
         </div>
