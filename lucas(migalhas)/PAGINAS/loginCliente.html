@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="../ASSETS/CSS/loginCliente.css">
 </head>
 <body>
+
     <button id="menu-btn">☰</button>
 
     <nav id="menu" class="menu">
         <ul>
-             <li><a href="../index.php">Home</a></li>
+            <li><a href="../index.php">Home</a></li>
             <li><a href="biblioteca.html">Biblioteca</a></li>
             <li><a href="categoria.html">Categoria</a></li>
             <li><a href="loginCliente.html">Login</a></li>
@@ -23,37 +24,98 @@
     <div class="container">
         <div class="logo-container">
             <img src="../ASSETS/IMG/logo.png.png" alt="Ghost Gamer" class="logo-img">
-            <span class="logo-text"><a href="../index.html">GHOST GAMER</a></span>
+            <span class="logo-text">
+                <a href="../index.php">GHOST GAMER</a>
+            </span>
         </div>
 
-        <!-- Apenas Login Form - Centralizado -->
         <div class="login-wrapper">
             <div class="form-box login-box">
+
                 <h2>LOGIN</h2>
-                <form method="post" action="../XAMP/loginCliente.php">
+
+                <p id="mensagemErro"></p>
+
+                <form id="formLogin">
+
                     <div class="input-group">
                         <label>Email</label>
-                        <input type="email" name="email" placeholder="Digite seu email">
+                        <input type="email" name="email" placeholder="Digite seu email" required>
                     </div>
+
                     <div class="input-group">
                         <label>Senha</label>
-                        <input type="password" name="senha" placeholder="Digite sua senha">
+                        <input type="password" name="senha" placeholder="Digite sua senha" required>
                     </div>
+
                     <div class="checkbox-group">
                         <input type="checkbox" id="lembrar">
                         <label for="lembrar">Lembrar-me</label>
                     </div>
-                    <button type="submit" class="btn-login">LOGIN</button>
-                    <a href="../PAGINAS/esqueciSenha.html" class="forgot-password">Esqueci minha senha</a>
-                    
+
+                    <button type="submit" class="btn-login">
+                        LOGIN
+                    </button>
+
+                    <a href="../PAGINAS/esqueciSenha.html" class="forgot-password">
+                        Esqueci minha senha
+                    </a>
+
                     <div class="cadastro-link">
-                        <p>Não tem uma conta? <a href="cadastroCliente.html">Cadastre-se</a></p>
+                        <p>
+                            Não tem uma conta?
+                            <a href="cadastroCliente.html">Cadastre-se</a>
+                        </p>
                     </div>
+
                 </form>
+
             </div>
         </div>
     </div>
 
+    <script>
+
+    document.getElementById("formLogin").addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        let dados = new FormData(this);
+
+        fetch("../XAMP/loginCliente.php", {
+            method: "POST",
+            body: dados
+        })
+        .then(function(resposta){
+            return resposta.text();
+        })
+        .then(function(resultado){
+
+            if(resultado == "senha"){
+
+                document.getElementById("mensagemErro").innerHTML =
+                    "Senha incorreta.";
+
+            }
+            else if(resultado == "usuario"){
+
+                document.getElementById("mensagemErro").innerHTML =
+                    "Usuário não encontrado.";
+
+            }
+            else if(resultado == "sucesso"){
+
+                window.location.href = "../index.php";
+
+            }
+
+        });
+
+    });
+
+    </script>
+
     <script src="../ASSETS/JS/index.js"></script>
+
 </body>
 </html>
