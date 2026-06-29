@@ -13,19 +13,12 @@ if (!$id) {
 
 mysql_select_db("ghost_gamer", $id);
 
-if (!mysql_select_db("ghost_gamer", $id)) {
-    die("Erro ao selecionar banco: " . mysql_error());
-}
-
-echo "Banco selecionado com sucesso!";
-
 // VERIFICA SE O FORMULÁRIO FOI ENVIADO
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = trim($_POST["email"]);
     $senha = $_POST["senha"];
 
-    
     $sql = "SELECT id_cliente,
                    cli_nome,
                    email,
@@ -37,38 +30,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultado = mysql_query($sql);
 
     if (!$resultado) {
-    die("Erro na consulta: " . mysql_error());
-}
+        die("Erro na consulta: " . mysql_error());
+    }
 
-    
+    // USUÁRIO ENCONTRADO?
     if (mysql_num_rows($resultado) > 0) {
 
         $usuario = mysql_fetch_assoc($resultado);
 
-        
+        // SENHA CORRETA?
         if (password_verify($senha, $usuario["senha"])) {
 
-            
             session_regenerate_id(true);
 
-            
             $_SESSION["id"] = $usuario["id_cliente"];
             $_SESSION["nome"] = $usuario["cli_nome"];
             $_SESSION["administrador"] = $usuario["administrador"];
 
-            
-            header("Location: ../index.php");
+            echo "sucesso";
             exit;
 
         } else {
 
-            echo "Senha incorreta.";
+            echo "senha";
+            exit;
 
         }
 
     } else {
 
-        echo "Usuário não encontrado.";
+        echo "usuario";
+        exit;
 
     }
 
