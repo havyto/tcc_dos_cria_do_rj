@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta</title>
+<meta charset="UTF-8">
+<title>Consulta no Banco</title>
 </head>
 <body>
-    <style>
-        tr, td{
-            width: 20%;
-        }
-    </style>
-<?php 
+<h1>Relatório de dados</h1>
+ 
+
+ 
+<?php
 error_reporting(0);
 mysql_connect("localhost","root","");
 mysql_select_db("ghost_gamer");
@@ -20,6 +17,7 @@ if (!empty($_POST['acao1'])) {
  
     if ($_POST['acao1']=="Mostrar Empresas") {
         $sql = "SELECT * FROM empresa";
+    
     } else { // ação = Filtrar
         $filtros = [];
  
@@ -87,13 +85,20 @@ if (!empty($_POST['acao1'])) {
         <td> $estado </td>
         <td> $cep </td>
         <td> $pais </td>
+        <td>
+
     </tr>";
+    
         }
     }else {
         echo "Nenhum resultado encontrado.";
     }
     echo"</table>";
-}if (!empty($_POST['acao2'])) {
+    ;
+        
+}
+
+if (!empty($_POST['acao2'])) {
  
     if ($_POST['acao2']=="Mostrar Clientes") {
         $sql = "SELECT * FROM clientes";
@@ -119,9 +124,8 @@ if (!empty($_POST['acao1'])) {
         <td> Código </td>
         <td> Nome </td>
         <td> Email </td>
-        <td> nickname </td>
-        <td> administrador </td>
-
+        <td> Nickname </td>
+        <td> Administrador </td>
     </tr>";
  
     if (mysql_num_rows($res) > 0) {
@@ -138,13 +142,16 @@ if (!empty($_POST['acao1'])) {
         <td> $email </td>
         <td> $nickname </td>
         <td> $administrador </td>
+
     </tr>";
         }
     }else {
         echo "Nenhum resultado encontrado.";
     }
     echo"</table>";
-}if (!empty($_POST['acao3'])) {
+}
+
+if (!empty($_POST['acao3'])) {
  
     if ($_POST['acao3']=="Mostrar Jogos") {
         $sql = "SELECT * FROM jogo";
@@ -171,9 +178,9 @@ if (!empty($_POST['acao1'])) {
         <td> Titulo </td>
         <td> Email Empresarial </td>
         <td> Genero </td>
-        <td> ram_gb </td>
-        <td> vram_rb </td>
-        <td> armazenamento </td>
+        <td> RAM (GB) </td>
+        <td> VRAM (GB) </td>
+        <td> Armazenamento </td>
     </tr>";
  
     if (mysql_num_rows($res) > 0) {
@@ -192,17 +199,19 @@ if (!empty($_POST['acao1'])) {
         <td> $empresa_email </td>
         <td> $genero </td>
         <td> $ram_gb </td>
-        <td> $vram_gb</td>
+        <td> $vram_gb </td>
         <td> $armazenamento </td>
+        
     </tr>";
         }
     }else {
         echo "Nenhum resultado encontrado.";
     }
+    echo"</table>";
 }
+
 ?>
- 
+
 
 </body>
 </html>
-
