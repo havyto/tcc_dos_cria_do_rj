@@ -23,6 +23,7 @@ if (!empty($_POST['acao1'])) {
  
     if ($_POST['acao1']=="Mostrar Empresas") {
         $sql = "SELECT * FROM empresa";
+    
     } else { // ação = Filtrar
         $filtros = [];
  
@@ -104,12 +105,19 @@ if (!empty($_POST['acao1'])) {
                 <input type=hidden name='id_empresa' value='$id_empresa'>
             </form>
         </td>
+
     </tr>";
+    
         }
     }else {
         echo "Nenhum resultado encontrado.";
     }
     echo"</table>";
+    echo    "<form method=post action=consulta2.php target=_blank>
+                <input type=hidden name='acao1' value='Mostrar Empresas'>
+                <input type=submit value=Gerar relatorio>
+            </form>";
+        
 }
 
 if (!empty($_POST['acao2'])) {
@@ -176,6 +184,10 @@ if (!empty($_POST['acao2'])) {
         echo "Nenhum resultado encontrado.";
     }
     echo"</table>";
+    echo    "<form method=post action=consulta2.php target=_blank>
+                <input type=hidden name='acao2' value='Mostrar Clientes'>
+                <input type=submit value=Gerar relatorio>
+            </form>";
 }
 
 if (!empty($_POST['acao3'])) {
@@ -248,9 +260,14 @@ if (!empty($_POST['acao3'])) {
         echo "Nenhum resultado encontrado.";
     }
     echo"</table>";
+    echo    "<form method=post action=consulta2.php target=_blank>
+                <input type=hidden name='acao3' value='Mostrar Jogos'>
+                <input type=submit value=Gerar relatorio>
+            </form>";
 }
+
 ?>
- 
-<a href="principal.php">Voltar</a>
+
+<a href="../index.php">Voltar</a>
 </body>
 </html>
