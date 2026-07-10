@@ -4,7 +4,7 @@
 error_reporting(E_ALL & ~E_DEPRECATED);
 
 // CONEXÃO
-$id = mysql_connect("localhost", "root", "");
+$id = mysql_connect("sql304.infinityfree.com", "if0_42381706", "jKM7qhXLZxqUip0");
 if (!$id) {
     die("Erro na conexão: " . mysql_error());
 }
