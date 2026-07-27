@@ -42,7 +42,6 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
             <?php if ($tipo === "admin") { ?>
                 <li><a href="XAMP/consulta.php">Consulta</a></li>
                 <li><a href="XAMP/cadastroEmpresa.php">Cadastro de Empresa</a></li>
-                <li><a href="XAMP/cadastroCliente.php">Cadastro de Cliente</a></li>
                 <li><a href="PAGINAS/cadastroJogos.html">Cadastro de Jogos</a></li>
                 <li><a href="XAMP/alteraCliente.php">Altera Cliente</a></li>
                 <li><a href="XAMP/alteraEmpresa.php">Altera Empresa</a></li>
