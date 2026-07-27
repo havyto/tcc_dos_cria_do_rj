@@ -31,7 +31,7 @@
 			}
 		
 		?>
-		<form method=POST action=alteraEmpresa2.php>
+		<form method=POST action=altera.php>
 			<br> Codigo = <input type=text name=cod value="<?php echo"$cod"; ?>" disabled>
 			<br><input type=hidden name=id_empresa value="<?php echo"$cod"; ?>">
 			<br> Razão Social = <input type=text name=razao_social value="<?php echo"$razao_social";?>">

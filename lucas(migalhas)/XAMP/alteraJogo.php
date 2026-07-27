@@ -24,7 +24,7 @@
 			}
 		
 		?>
-		<form method=POST action=alteraJogo2.php>
+		<form method=POST action=altera.php>
 			<br> Codigo = <input type=text name=cod value="<?php echo"$cod"; ?>" disabled>
 			<br><input type=hidden name=id_jogo value="<?php echo"$cod"; ?>">
 			<br> Titulo = <input type=text name=titulo value="<?php echo"$titulo";?>">

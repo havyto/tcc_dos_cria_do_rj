@@ -23,7 +23,7 @@
 			}
 		
 		?>
-		<form method=POST action=altera_cliente2.php>
+		<form method=POST action=altera.php>
 			<br> Codigo = <input type=text name=cod value="<?php echo"$cod"; ?>" disabled>
 			<br><input type=hidden name=id_cliente value="<?php echo"$cod"; ?>">
 			<br> Nome = <input type=text name=cli_nome value="<?php echo"$nome";?>">

@@ -100,7 +100,7 @@ if (!empty($_POST['acao1'])) {
             </form>
         </td>
         <td>
-            <form method=post action=exclui_empresa.php>
+            <form method=post action=exclui.php>
                 <input type=submit value='Excluir' name='botao'>
                 <input type=hidden name='id_empresa' value='$id_empresa'>
             </form>
@@ -173,7 +173,7 @@ if (!empty($_POST['acao2'])) {
             </form>
         </td>
         <td>
-            <form method=post action=exclui_cliente.php>
+            <form method=post action=exclui.php>
                 <input type=submit value='Excluir' name='botao'>
                 <input type=hidden name='id_cliente' value='$id_cliente'>
             </form>
@@ -249,7 +249,7 @@ if (!empty($_POST['acao3'])) {
             </form>
         </td>
         <td>
-            <form method=post action=exclui_jogo.php>
+            <form method=post action=exclui.php>
                 <input type=submit value='Excluir' name='botao'>
                 <input type=hidden name='id_jogo' value='$id_jogo'>
             </form>
