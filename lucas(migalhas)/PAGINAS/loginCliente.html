@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,12 +13,15 @@
 
     <nav id="menu" class="menu">
         <ul>
-            <li><a href="../index.php">Home</a></li>
-            <li><a href="biblioteca.html">Biblioteca</a></li>
-            <li><a href="categoria.html">Categoria</a></li>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="biblioteca.php">Biblioteca</a></li>
+            <li><a href="categoria.php">Categoria</a></li>
+            <li><a href="perfil.php">Perfil</a></li>
+            <li><a href="suporte.php">Suporte</a></li>
             <li><a href="loginCliente.html">Login</a></li>
-            <li><a href="cadastroCliente.html">Cadastro</a></li>
-            <li><a href="suporte.html">Suporte</a></li>
+            <li><a href="cadastroCliente.php">Cadastro</a></li>
+            <li><a href="../XAMP/logout.php">SAIR</a></li>
+
         </ul>
     </nav>
 
@@ -74,48 +78,6 @@
         </div>
     </div>
 
-    <script>
-
-    document.getElementById("formLogin").addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        let dados = new FormData(this);
-
-        fetch("../XAMP/loginCliente.php", {
-            method: "POST",
-            body: dados
-        })
-        .then(function(resposta){
-            return resposta.text();
-        })
-        .then(function(resultado){
-
-            if(resultado == "senha"){
-
-                document.getElementById("mensagemErro").innerHTML =
-                    "Senha incorreta.";
-
-            }
-            else if(resultado == "usuario"){
-
-                document.getElementById("mensagemErro").innerHTML =
-                    "Usuário não encontrado.";
-
-            }
-            else if(resultado == "sucesso"){
-
-                window.location.href = "../index.php";
-
-            }
-
-        });
-
-    });
-
-    </script>
-
-    <script src="../ASSETS/JS/index.js"></script>
-
+    <script src="../ASSETS/JS/login.js"></script>
 </body>
 </html>
