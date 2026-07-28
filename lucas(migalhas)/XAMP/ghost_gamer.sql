@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Jun-2026 às 03:20
+-- Generation Time: 28-Jul-2026 às 22:01
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `administrador` enum('usuario','admin') NOT NULL DEFAULT 'usuario',
   PRIMARY KEY (`id_cliente`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Extraindo dados da tabela `clientes`
@@ -48,8 +48,8 @@ INSERT INTO `clientes` (`id_cliente`, `cli_nome`, `email`, `nickname`, `senha`, 
 (17, 'Lucas Ferreira', 'lucas.ferreira@gmail.com', 'LkzFPS', '$2y$10$LECIQz5mnKpH0Sz9HMYeg.JRFZxdSD6aKPXGL7DDtS7sX0TMaeZgC', 'usuario'),
 (18, 'Rafael Santos', 'rafael.santos@gmail.com', 'RafaX', '$2y$10$5eMUe2ickq8E9j6gDNlakuIHurKzuVqUvfSiP7Q7yOa2DakH6zmPG', 'usuario'),
 (21, 'Gustavo Moreira', 'gustavoxmoreira2008@gmail.com', 'Gus', '$2y$10$neGXY7/rNYxeB.1SVDYT4.B8u7wqmlfslQjkGd5IcUAMW6teHQWFm', 'admin'),
-(22, 'Lucas Santos', 'lucasberlucasbernardinellisan@gmail.com', 'Havyto', '$2y$10$hQ7alZJTarojmKzxIqq0WuqSmPBNGw.Aiz1XJbdpYDgZkp8YxCN7i', 'admin'),
-(23, 'Lucas Magalhaes', 'lucas.magalhaes31102008@gmail.com', 'Lucas', '$2y$10$bAcdoLDjrbZxrPgvzyrehOpGUbTqAn0PvJcZ1QYewJis.1KWh309q', 'admin');
+(23, 'Lucas Magalhaes', 'lucas.magalhaes31102008@gmail.com', 'Lucas', '$2y$10$bAcdoLDjrbZxrPgvzyrehOpGUbTqAn0PvJcZ1QYewJis.1KWh309q', 'admin'),
+(24, 'Lucas Santos', 'lucasbernardinellisan@gmail.com', 'Havyto', '$2y$10$Cx3oIAHR7c8apxkREQo9yOQJsSiED9lXc/J6tZY/m.O/1BlbIWhC2', 'admin');
 
 -- --------------------------------------------------------
 
