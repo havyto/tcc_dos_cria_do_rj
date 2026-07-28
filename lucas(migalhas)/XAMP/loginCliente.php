@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["nome"] = $usuario["cli_nome"];
             $_SESSION["administrador"] = $usuario["administrador"];
 
-            echo "sucesso";
+            header("location: ../index.php");
             exit;
 
         } else {
