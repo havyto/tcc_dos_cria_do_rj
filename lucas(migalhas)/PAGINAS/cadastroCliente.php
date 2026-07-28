@@ -44,7 +44,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
     <div class="container">
         <div class="logo-container">
             <img src="../ASSETS/IMG/logo.png.png" alt="Ghost Gamer" class="logo-img">
-            <span class="logo-text"><a href="../index.html">GHOST GAMER</a></span>
+            <span class="logo-text"><a href="../index.php">GHOST GAMER</a></span>
         </div>
 
         <!-- Apenas Cadastro Form - Centralizado -->
