@@ -18,7 +18,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
 
     <nav id="menu" class="menu">
         <ul>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="../index.php">Home</a></li>
             <li><a href="biblioteca.php">Biblioteca</a></li>
             <li><a href="categoria.php">Categoria</a></li>
 
@@ -51,14 +51,14 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
         <div class="cadastro-wrapper">
             <div class="form-box cadastro-box">
                 <h2>CADASTRO</h2>
-                <form method=POST action=gravarcad_Jogo.php>
+                <form method=POST action=../XAMP/gravarcad.php>
                     <div class="input-group">
                         <label>Nome do Jogo</label>
-                        <input type="text" placeholder="Digite o nome do jogo">
+                        <input type="text" name="titulo" placeholder="Digite o nome do jogo">
                     </div>
                     <div class="input-group">
                         <label>Contato do Empresa</label>
-                        <input type="text" placeholder="Digite seu numero de contato">
+                        <input type="text" name="empresa_email" placeholder="Digite seu numero de contato">
                     </div>
                     <div class="input-group">
                         <label>Gêneros do Jogo</label>
