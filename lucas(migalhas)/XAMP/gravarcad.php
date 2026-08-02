@@ -7,7 +7,7 @@
     }
     $id = mysql_connect ("localhost", "root", "");
     $con = mysql_select_db ("ghost_gamer", $id);
-    if($pagina_anterior =="http://localhost/lucas(migalhas)/XAMP/alteraCliente.php"){
+    if($pagina_anterior =="http://localhost/lucas(migalhas)/PAGINAS/cadastroCliente.php"){
         $cli_nome = $_POST['cli_nome'];
         $email = $_POST['email'];
         $nickname = $_POST['nickname'];
@@ -15,7 +15,7 @@
         $sql = "insert into clientes (cli_nome, email, nickname, senha) values
         ('$cli_nome', '$email', '$nickname', '$senha')";
     }
-    if(){
+    if("http://localhost/lucas(migalhas)/PAGINAS/cadastroEmpresa.php"){
         $razao_social = $_POST['razao_social'];
         $nome_fantasia = $_POST['nome_fantasia'];
         $CNPJ = $_POST['CNPJ'];
@@ -33,7 +33,7 @@
         $sql = "insert into empresa (razao_social, nome_fantasia, CNPJ, data_abertura, telefone, email, Rua, numero, bairro, cidade, estado, cep, pais) values
         ('$razao_social', '$nome_fantasia', '$CNPJ', '$data_abertura', '$telefone', '$email', '$Rua', '$numero', '$bairro', '$cidade', '$estado', '$cep', '$pais')";
     }
-    if(){
+    if($pagina_anterior == "http://localhost/lucas(migalhas)/PAGINAS/cadastroJogos.php"){
         
     $titulo = $_POST['titulo'];
     $empresa_email = $_POST['empresa_email'];
@@ -46,6 +46,6 @@
     mysql_query($sql);
     mysql_close($id);
     echo "gravado com sucesso";
-    header("location: cadastroCliente.php");
+    header("location: $pagina_anterior");
 
 ?>
