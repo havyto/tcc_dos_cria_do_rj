@@ -7,7 +7,7 @@
     }
     $id = mysql_connect ("localhost", "root", "");
     $con = mysql_select_db ("ghost_gamer", $id);
-    if($pagina_anterior =="http://localhost/lucas(migalhas)/PAGINAS/cadastroCliente.php"){
+    if($pagina_anterior =="http://localhost/lucas(migalhas)/PAGINAS/cadastroCliente.html"){
         $cli_nome = $_POST['cli_nome'];
         $email = $_POST['email'];
         $nickname = $_POST['nickname'];

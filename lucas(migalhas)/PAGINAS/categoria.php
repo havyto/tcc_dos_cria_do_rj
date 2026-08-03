@@ -30,7 +30,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
     <!-- MENU LATERAL -->
     <nav id="menu" class="menu">
         <ul>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="../index.php">Home</a></li>
             <li><a href="biblioteca.php">Biblioteca</a></li>
             <li><a href="categoria.php">Categoria</a></li>
 
@@ -39,15 +39,12 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
                 <li><a href="../XAMP/consulta.php">Consulta</a></li>
                 <li><a href="../XAMP/cadastroEmpresa.php">Cadastro de Empresa</a></li>
                 <li><a href="cadastroJogos.php">Cadastro de Jogos</a></li>
-                <li><a href="../XAMP/alteraCliente.php">Altera Cliente</a></li>
-                <li><a href="../XAMP/alteraEmpresa.php">Altera Empresa</a></li>
-                <li><a href="../XAMP/alteraJogo.php">Altera Jogo</a></li>
             <?php } ?>
 
             <li><a href="perfil.php">Perfil</a></li>
             <li><a href="suporte.php">Suporte</a></li>
             <li><a href="loginCliente.html">Login</a></li>
-            <li><a href="cadastroCliente.php">Cadastro</a></li>
+            <li><a href="cadastroCliente.html">Cadastro</a></li>
             <li><a href="../XAMP/logout.php">SAIR</a></li>
 
         </ul>

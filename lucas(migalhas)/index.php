@@ -43,15 +43,12 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
                 <li><a href="XAMP/consulta.php">Consulta</a></li>
                 <li><a href="XAMP/cadastroEmpresa.php">Cadastro de Empresa</a></li>
                 <li><a href="PAGINAS/cadastroJogos.php">Cadastro de Jogos</a></li>
-                <li><a href="XAMP/alteraCliente.php">Altera Cliente</a></li>
-                <li><a href="XAMP/alteraEmpresa.php">Altera Empresa</a></li>
-                <li><a href="alteraJogo.php">Altera Jogo</a></li>
             <?php } ?>
 
             <li><a href="PAGINAS/perfil.php">Perfil</a></li>
             <li><a href="PAGINAS/suporte.php">Suporte</a></li>
             <li><a href="PAGINAS/loginCliente.html">Login</a></li>
-            <li><a href="PAGINAS/cadastroCliente.php">Cadastro</a></li>
+            <li><a href="PAGINAS/cadastroCliente.html">Cadastro</a></li>
             <li><a href="XAMP/logout.php">SAIR</a></li>
 
         </ul>
@@ -63,7 +60,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
             <h2>Bem-vindo ao</h2>
             <h1>GHOST GAMER</h1>
             <p>Seus jogos favoritos em um só lugar</p>
-            <button class="btn-download"><a href="XAMP/cadastroJogos.php">BAIXAR AGORA</a></button>
+            <button class="btn-download"><a href="PAGINAS/telaJogo.php">BAIXAR AGORA</a></button>
         </div>
     </section>
 
