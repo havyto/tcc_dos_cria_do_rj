@@ -47,19 +47,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["nome"] = $usuario["cli_nome"];
             $_SESSION["administrador"] = $usuario["administrador"];
 
-            header("location: ../index.php");
+            header("Location: ../index.php");
             exit;
 
         } else {
 
-            echo "senha";
+            // SENHA INCORRETA
+            header("Location: ../PAGINAS/loginCliente.html");
             exit;
 
         }
 
     } else {
 
-        echo "usuario";
+        // USUÁRIO NÃO ENCONTRADO
+        header("Location: ../PAGINAS/loginCliente.html");
         exit;
 
     }
