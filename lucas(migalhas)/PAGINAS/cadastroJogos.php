@@ -27,12 +27,15 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
                 <li><a href="../XAMP/consulta.php">Consulta</a></li>
                 <li><a href="../XAMP/cadastroEmpresa.php">Cadastro de Empresa</a></li>
                 <li><a href="cadastroJogos.php">Cadastro de Jogos</a></li>
+                <li><a href="../XAMP/alteraCliente.php">Altera Cliente</a></li>
+                <li><a href="../XAMP/alteraEmpresa.php">Altera Empresa</a></li>
+                <li><a href="../XAMP/alteraJogo.php">Altera Jogo</a></li>
             <?php } ?>
 
             <li><a href="perfil.php">Perfil</a></li>
             <li><a href="suporte.php">Suporte</a></li>
             <li><a href="loginCliente.html">Login</a></li>
-            <li><a href="cadastroCliente.html">Cadastro</a></li>
+            <li><a href="cadastroCliente.php">Cadastro</a></li>
             <li><a href="../XAMP/logout.php">SAIR</a></li>
 
         </ul>
@@ -59,8 +62,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
                     </div>
                     <div class="input-group">
                         <label>Gêneros do Jogo</label>
-                        <input type="checkbox">
-                        <input type="checkbox">
+                        <input type="text" name="genero" placeholder="Digite o gênero do jogo">
                     </div>
                     <button type="submit" class="btn-cadastro">Cadastrar o Jogo</button>
                 </form>
