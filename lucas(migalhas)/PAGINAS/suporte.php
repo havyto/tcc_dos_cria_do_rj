@@ -37,7 +37,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
             <!-- ADMIN ONLY -->
             <?php if ($tipo === "admin") { ?>
                 <li><a href="../XAMP/consulta.php">Consulta</a></li>
-                <li><a href="../XAMP/cadastroEmpresa.php">Cadastro de Empresa</a></li>
+                <li><a href="../PAGINAS/cadastroEmpresa.php">Cadastro de Empresa</a></li>
                 <li><a href="cadastroJogos.php">Cadastro de Jogos</a></li>
             <?php } ?>
 
@@ -59,7 +59,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
         <div class="suporteContent">
             <ul class="msuporte">
                 <li><a href="index.html" class="suporte">JOGOS</a></li><br>
-                <li><a href="PAGINAS/biblioteca.html" class="suporte">Compras</a></li><br>
+                <li><a href="PAGINAS/biblioteca.html" class="suporte">Comparação de Requisitos</a></li><br>
                 <li><a href="PAGINAS/perfil.html" class="suporte">Minha Conta</a></li><br>
             </ul>
         </div>

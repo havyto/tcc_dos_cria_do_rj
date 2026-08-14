@@ -35,7 +35,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
             <!-- ADMIN ONLY -->
             <?php if ($tipo === "admin") { ?>
                 <li><a href="../XAMP/consulta.php">Consulta</a></li>
-                <li><a href="../XAMP/cadastroEmpresa.php">Cadastro de Empresa</a></li>
+                <li><a href="../PAGINAS/cadastroEmpresa.php">Cadastro de Empresa</a></li>
                 <li><a href="cadastroJogos.php">Cadastro de Jogos</a></li>
             <?php } ?>
 

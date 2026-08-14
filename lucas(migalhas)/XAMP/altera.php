@@ -43,9 +43,16 @@
         $titulo = $_POST['titulo'];
         $empresa_email = $_POST['empresa_email'];
         $genero = $_POST['genero'];
+        $nucleos = $_POST['nucleos'];
+        $threads = $_POST['threads'];
+        $frequencia = $_POST['frequencia'];
+        $ram_gb = $_POST['ram_gb'];
+        $vram_gb = $_POST['vram_gb'];
+        $armazenamento = $_POST['armazenamento'];
         
-        $sql = "insert into jogo (titulo, empresa_email, genero) values
-        ('$titulo', '$empresa_email', '$genero')";
+        $sql = "update jogo set titulo= '$titulo', empresa_email = '$empresa_email', genero = '$genero', 
+        nucleos = '$nucleos', threads = '$threads', frequencia = '$frequencia', ram_gb = '$ram_gb', vram_gb = '$vram_gb', armazenamento = '$armazenamento' where id_jogo ='$cod'";
+
     }
     mysql_query($sql);
 	header("location: consulta.php");

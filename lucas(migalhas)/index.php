@@ -72,19 +72,19 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
             <div class="game-card">
                 <h3>Valorant</h3>
                 <p>FPS tático</p>
-                <button class="play-btn">JOGAR</button>
+                <button class="play-btn"><a href="PAGINAS/telaJogo.php">JOGAR</a></button>
             </div>
 
             <div class="game-card">
                 <h3>League of Legends</h3>
                 <p>MOBA</p>
-                <button class="play-btn">JOGAR</button>
+                <button class="play-btn"><a href="PAGINAS/telaJogo.php">JOGAR</a></button>
             </div>
 
             <div class="game-card">
                 <h3>CS:GO</h3>
                 <p>FPS competitivo</p>
-                <button class="play-btn">JOGAR</button>
+                <button class="play-btn"><a href="PAGINAS/telaJogo.php">JOGAR</a></button>
             </div>
         </div>
     </section>

@@ -24,17 +24,17 @@
 			}
 		
 		?>
-		<form method=POST action=altera.php>
-			<br> Codigo = <input type=text name=cod value="<?php echo"$cod"; ?>" disabled>
-			<br><input type=hidden name=id_jogo value="<?php echo"$cod"; ?>">
-			<br> Titulo = <input type=text name=titulo value="<?php echo"$titulo";?>">
-			<br> E-mail Empresarial = <input type=text name=empresa_email value="<?php echo"$empresa_email"; ?>">
-			<br> Genero = <input type=text name=genero value="<?php echo"$genero"; ?>">
-			<br> RAM (GB) = <input type=text name=ram_gb value="<?php echo"$ram_gb"; ?>">
-			<br> VRAM (GB) = <input type=text name=vram_gb value="<?php echo"$vram_gb"; ?>">
-			<br> Armazenamento = <input type=text name=armazenamento value="<?php echo"$armazenamento"; ?>">
-			<br> <input type=submit value=GRAVAR>
-			<input type=reset value=LIMPAR>
+		<form method="POST" action="altera.php">
+			<br> Codigo = <input type="text" name="cod" value="<?php echo"$cod"; ?>" disabled>
+			<br><input type=hidden name="id_jogo" value="<?php echo"$cod"; ?>">
+			<br> Titulo = <input type="text" name="titulo" value="<?php echo"$titulo";?>">
+			<br> E-mail Empresarial = <input type="text" name="empresa_email" value="<?php echo"$empresa_email"; ?>">
+			<br> Genero = <input type="text" name="genero" value="<?php echo"$genero"; ?>">
+			<br> RAM (GB) = <input type="number" name="ram_gb" value="<?php echo"$ram_gb"; ?>">
+			<br> VRAM (GB) = <input type="number" name="vram_gb" value="<?php echo"$vram_gb"; ?>">
+			<br> Armazenamento = <input type="number" name="armazenamento" value="<?php echo"$armazenamento"; ?>">
+			<br> <input type="submit" value="GRAVAR">
+			<input type="reset" value="LIMPAR">
 			<br>
 		</form>
 		<br><br><a href="consulta.php"> - VOLTAR - </a>

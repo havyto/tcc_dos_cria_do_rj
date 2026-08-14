@@ -27,7 +27,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
             <!-- ADMIN ONLY -->
             <?php if ($tipo === "admin") { ?>
                 <li><a href="../XAMP/consulta.php">Consulta</a></li>
-                <li><a href="../XAMP/cadastroEmpresa.php">Cadastro de Empresa</a></li>
+                <li><a href="../PAGINAS/cadastroEmpresa.php">Cadastro de Empresa</a></li>
                 <li><a href="cadastroJogos.php">Cadastro de Jogos</a></li>
             <?php } ?>
 
@@ -55,7 +55,28 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
                     </div>
                     <div class="input-group">
                         <label>Email da Empresa</label>
-                        <input type="text" name="empresa_email" placeholder="Digite o E-mail da Empresa">
+                        <select required class="input-genero">
+                        <?php 
+                        error_reporting(0);
+
+                        mysql_connect("localhost", "root", "");
+                        mysql_select_db("ghost_gamer");
+                        $sql_em = "SELECT DISTINCT email FROM empresa ORDER BY email";
+                        $result_email = mysql_query($sql_em);
+
+                        while ($linha = mysql_fetch_assoc($result_email)) {
+
+                            $selecionado = ($email == $linha['email']) ? "selected" : "";
+
+                            echo "
+                                <option value='" . htmlspecialchars($linha['email']) . "' $selecionado>
+                                    " . htmlspecialchars($linha['email']) . "
+                                </option>
+                            ";
+                        }
+
+                        ?>
+                        </select>
                     </div>
                     <div class="input-group">
                         <label>Gênero</label>

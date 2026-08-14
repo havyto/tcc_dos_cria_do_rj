@@ -25,7 +25,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
             <!-- ADMIN ONLY -->
             <?php if ($tipo === "admin") { ?>
                 <li><a href="../XAMP/consulta.php">Consulta</a></li>
-                <li><a href="../XAMP/cadastroEmpresa.php">Cadastro de Empresa</a></li>
+                <li><a href="../PAGINAS/cadastroEmpresa.php">Cadastro de Empresa</a></li>
                 <li><a href="cadastroJogos.php">Cadastro de Jogos</a></li>
             <?php } ?>
 
@@ -82,16 +82,45 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
                         <input type="text" name="numero" placeholder="Digite o numero">
                     </div>
                     <div class="input-group">
-                        <label>bairro</label>
+                        <label>Bairro</label>
                         <input type="text" name="bairro" placeholder="Digite seu bairro">
                     </div>
                     <div class="input-group">
-                        <label>cidade</label>
+                        <label>Cidade</label>
                         <input type="text" name="cidade" placeholder="Digite sua cidade">
                     </div>
                     <div class="input-group">
-                        <label>estado</label>
-                        <input type="text" name="estado" placeholder="Digite seu estado">
+                        <label>Gênero</label>
+                        <select name="estado" required class="input-genero">
+                            <option value="" disabled selected>Selecione o Estado</option>
+                            <option value="AC">AC</option>
+                            <option value="AL">AL</option>
+                            <option value="AP">AP</option>
+                            <option value="AM">AM</option>
+                            <option value="BA">BA</option>
+                            <option value="CE">CE</option>
+                            <option value="DF">DF</option>
+                            <option value="ES">ES</option>
+                            <option value="GO">GO</option>
+                            <option value="MA">MA</option>
+                            <option value="MT">MT</option>
+                            <option value="MS">MS</option>
+                            <option value="MG">MG</option>
+                            <option value="PA">PA</option>
+                            <option value="PB">PB</option>
+                            <option value="PR">PR</option>
+                            <option value="PE">PE</option>
+                            <option value="PI">PI</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RN">RN</option>
+                            <option value="RS">RS</option>
+                            <option value="RO">RO</option>
+                            <option value="RR">RR</option>
+                            <option value="SC">SC</option>
+                            <option value="SP">SP</option>
+                            <option value="SE">SE</option>
+                            <option value="TO">TO</option>
+                        </select>
                     </div>
                     <div class="input-group">
                         <label>CEP</label>
