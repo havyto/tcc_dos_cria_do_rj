@@ -15,7 +15,7 @@
         $sql = "insert into clientes (cli_nome, email, nickname, senha) values
         ('$cli_nome', '$email', '$nickname', '$senha')";
     }
-    if("http://localhost/lucas(migalhas)/PAGINAS/cadastroEmpresa.php"){
+    if($pagina_anterior == "http://localhost/lucas(migalhas)/PAGINAS/cadastroEmpresa.php"){
         $razao_social = $_POST['razao_social'];
         $nome_fantasia = $_POST['nome_fantasia'];
         $CNPJ = $_POST['CNPJ'];
@@ -38,14 +38,21 @@
     $titulo = $_POST['titulo'];
     $empresa_email = $_POST['empresa_email'];
     $genero = $_POST['genero'];
+    $nucleos = $_POST['nucleos'];
+    $threads = $_POST['threads'];
+    $frequencia = $_POST['frequencia'];
+    $ram_gb = $_POST['ram_gb'];
+    $vram_gb = $_POST['vram_gb'];
+    $armazenamento = $_POST['armazenamento'];
     
-    $sql = "insert into jogo (titulo, empresa_email, genero) values
-    ('$titulo', '$empresa_email', '$genero')";
+    $sql = "insert into jogo (titulo, empresa_email, genero, nucleos, threads, frequencia, ram_gb, vram_gb, armazenamento) values
+        ('$titulo', '$empresa_email', '$genero', '$nucleos', '$threads', '$frequencia', '$ram_gb', '$vram_gb', '$armazenamento')";
         
     }
-    mysql_query($sql);
-    mysql_close($id);
-    echo "gravado com sucesso";
-    header("location: $pagina_anterior");
+mysql_query($sql);
+mysql_close($id);
+
+header("location: $pagina_anterior");
+exit;
 
 ?>

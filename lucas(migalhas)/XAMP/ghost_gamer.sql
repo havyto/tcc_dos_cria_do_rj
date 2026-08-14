@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Jul-2026 às 22:01
+-- Generation Time: 14-Ago-2026 às 19:33
 -- Versão do servidor: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `empresa` (
   `cep` char(8) DEFAULT NULL,
   `pais` char(2) DEFAULT NULL,
   PRIMARY KEY (`id_empresa`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Extraindo dados da tabela `empresa`
@@ -82,7 +82,9 @@ CREATE TABLE IF NOT EXISTS `empresa` (
 INSERT INTO `empresa` (`id_empresa`, `razao_social`, `nome_fantasia`, `CNPJ`, `data_abertura`, `telefone`, `email`, `Rua`, `numero`, `bairro`, `cidade`, `estado`, `cep`, `pais`) VALUES
 (1, 'TechNova Games Ltda', 'Ghost Gamer Studios', '12.345.678/000', '2022-08-12', '(11) 98765-432', 'contato@ghostgamer.com', 'Rua das Gameplays', '245', 'Centro', 'SÃ£o Paulo', 'SP', '01001-00', 'Br'),
 (2, 'PixelStorm Tecnologia Digital Ltda', 'PixelStorm Games', '98.765.432/000', '2012-05-03', '(21) 97654-321', 'suporte@pixelstorm.com', 'Avenida Digital World', '880', 'Vila TecnolÃ³gica', 'Rio de Janeiro', 'RJ', '20040-02', 'Br'),
-(3, 'NeoArcade Entertainment S.A.', 'NeoArcade', '45.678.901/000', '2002-11-28', '(31) 99876-543', 'contato@neoarcade.com', 'Rua dos E-Sports', '1020', 'Savassi', 'Belo Horizonte', 'MG', '30140-11', 'Br');
+(3, 'NeoArcade Entertainment S.A.', 'NeoArcade', '45.678.901/000', '2002-11-28', '(31) 99876-543', 'contato@neoarcade.com', 'Rua dos E-Sports', '1020', 'Savassi', 'Belo Horizonte', 'MG', '30140-11', 'Br'),
+(4, 'VegetaTecnologia', 'VegeTec', '123906423232', '2014-05-09', '20993784723', 'VegetablesTec@gmail.com', 'Rua Abara Silva Campos', '453', 'SÃ£o Arnaldo', 'Montes Claros', 'MG', '23784745', 'br'),
+(5, 'Heartsetups', 'Heartups', '384612044', '1999-08-28', '196439203', 'heartup@gmail.com', 'Avenida Borges de Medeiros', '33', 'Vila SuÃ­Ã§a', 'Gramado', 'RS', '34526637', 'br');
 
 -- --------------------------------------------------------
 
@@ -120,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `jogo` (
   `vram_gb` int(10) unsigned DEFAULT NULL,
   `armazenamento` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id_jogo`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Extraindo dados da tabela `jogo`
@@ -129,7 +131,12 @@ CREATE TABLE IF NOT EXISTS `jogo` (
 INSERT INTO `jogo` (`id_jogo`, `titulo`, `empresa_email`, `genero`, `nucleos`, `threads`, `frequencia`, `ram_gb`, `vram_gb`, `armazenamento`) VALUES
 (2, 'patutuinhas', 'LucasberingelaInc@gmail.com', '', NULL, NULL, NULL, NULL, NULL, NULL),
 (3, 'adaadsad', 'LucasberingelaInc@gmail.com', '', NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'gggggg', 'LucasberingelaInc@gmail.com', 'rpg', NULL, NULL, NULL, NULL, NULL, NULL);
+(4, 'gggggg', 'LucasberingelaInc@gmail.com', 'rpg', NULL, NULL, NULL, NULL, NULL, NULL),
+(7, 'BombPotato', 'VegetablesTec@gmail.com', 'Indie', 3, 4, '3', 6, 1, 20),
+(8, 'Godzilla Disaster', 'VegetablesTec@gmail.com', 'Luta', 5, 4, '4', 8, 4, 50),
+(9, 'Junker Hospital', 'heartup@gmail.com', 'SimulaÃ§Ã£o', 3, 2, '2', 6, 2, 30),
+(10, 'Door Runners', 'suporte@pixelstorm.com', 'Corrida', 4, 5, '5', 8, 6, 68),
+(11, 'Darkeness Spike', 'suporte@pixelstorm.com', 'Terror', 6, 5, '6', 8, 8, 80);
 
 -- --------------------------------------------------------
 
