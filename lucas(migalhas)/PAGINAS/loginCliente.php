@@ -75,7 +75,7 @@
                     <div class="cadastro-link">
                         <p>
                             Não tem uma conta?
-                            <a href="cadastroCliente.html">Cadastre-se</a>
+                            <a href="cadastroCliente.php">Cadastre-se</a>
                         </p>
                     </div>
 
