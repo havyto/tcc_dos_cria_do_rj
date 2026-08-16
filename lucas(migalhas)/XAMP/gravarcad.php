@@ -7,7 +7,7 @@
     }
     $id = mysql_connect ("localhost", "root", "");
     $con = mysql_select_db ("ghost_gamer", $id);
-    if($pagina_anterior =="http://localhost/lucas(migalhas)/PAGINAS/cadastroCliente.html"){
+    if($pagina_anterior =="http://localhost/lucas(migalhas)/PAGINAS/cadastroCliente.php"){
         $cli_nome = $_POST['cli_nome'];
         $email = $_POST['email'];
         $nickname = $_POST['nickname'];
@@ -30,24 +30,26 @@
         $cep = $_POST['cep'];
         $pais = $_POST['pais'];
         
-        $sql = "insert into empresa (razao_social, nome_fantasia, CNPJ, data_abertura, telefone, email, Rua, numero, bairro, cidade, estado, cep, pais) values
-        ('$razao_social', '$nome_fantasia', '$CNPJ', '$data_abertura', '$telefone', '$email', '$Rua', '$numero', '$bairro', '$cidade', '$estado', '$cep', '$pais')";
+        $sql = "insert into empresa (razao_social, nome_fantasia, CNPJ, data_abertura, 
+        telefone, email, Rua, numero, bairro, cidade, estado, cep, pais) 
+        values ('$razao_social', '$nome_fantasia', '$CNPJ', '$data_abertura', '$telefone', '$email', 
+        '$Rua', '$numero', '$bairro', '$cidade', '$estado', '$cep', '$pais')";
     }
     if($pagina_anterior == "http://localhost/lucas(migalhas)/PAGINAS/cadastroJogos.php"){
         
-    $titulo = $_POST['titulo'];
-    $empresa_email = $_POST['empresa_email'];
-    $genero = $_POST['genero'];
-    $nucleos = $_POST['nucleos'];
-    $threads = $_POST['threads'];
-    $frequencia = $_POST['frequencia'];
-    $ram_gb = $_POST['ram_gb'];
-    $vram_gb = $_POST['vram_gb'];
-    $armazenamento = $_POST['armazenamento'];
-    
-    $sql = "insert into jogo (titulo, empresa_email, genero, nucleos, threads, frequencia, ram_gb, vram_gb, armazenamento) values
-        ('$titulo', '$empresa_email', '$genero', '$nucleos', '$threads', '$frequencia', '$ram_gb', '$vram_gb', '$armazenamento')";
+        $titulo = $_POST['titulo'];
+        $empresa_email = $_POST['empresa_email'];
+        $genero = $_POST['genero'];
+        $nucleos = $_POST['nucleos'];
+        $threads = $_POST['threads'];
+        $frequencia = $_POST['frequencia'];
+        $ram_gb = $_POST['ram_gb'];
+        $vram_gb = $_POST['vram_gb'];
+        $armazenamento = $_POST['armazenamento'];
         
+        $sql = "insert into jogo (titulo, empresa_email, genero, nucleos, threads, frequencia, ram_gb, vram_gb, armazenamento) values
+            ('$titulo', '$empresa_email', '$genero', '$nucleos', '$threads', '$frequencia', '$ram_gb', '$vram_gb', '$armazenamento')";
+            
     }
 mysql_query($sql);
 mysql_close($id);

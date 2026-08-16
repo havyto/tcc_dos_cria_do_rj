@@ -1,10 +1,12 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghost Gamer - Esqueci Senha</title>
-    <link rel="stylesheet" href="../ASSETS/CSS/loginCliente.css">
+    <title>Ghost Gamer - Cadastro</title>
+    <link rel="stylesheet" href="../ASSETS/CSS/cadastroCliente.css">
 </head>
 <body>
     <button id="menu-btn">☰</button>
@@ -37,16 +39,32 @@
             <span class="logo-text"><a href="../index.php">GHOST GAMER</a></span>
         </div>
 
-        <!-- Apenas Login Form - Centralizado -->
-        <div class="login-wrapper">
-            <div class="form-box login-box">
-                <h2>Recuperar Senha</h2>
-                <form>
+        <!-- Apenas Cadastro Form - Centralizado -->
+        <div class="cadastro-wrapper">
+            <div class="form-box cadastro-box">
+                <h2>CADASTRO</h2>
+                <form method="post" action="../XAMP/gravarcad.php">
+                    <div class="input-group">
+                        <label>Nome Completo</label>
+                        <input type="text" name="cli_nome" placeholder="Digite seu nome completo">
+                    </div>
                     <div class="input-group">
                         <label>Email</label>
-                        <input type="email" placeholder="Digite seu email">
+                        <input type="email" name="email" placeholder="Digite seu email">
                     </div>
-                    <button type="submit" class="btn-login">Mandar Codigo do Email</button>
+                    <div class="input-group">
+                        <label>Nickname</label>
+                        <input type="text" name="nickname" placeholder="Digite seu nickname">
+                    </div>
+                    <div class="input-group">
+                        <label>Senha</label>
+                        <input type="password" name="senha" placeholder="Digite sua senha">
+                    </div>
+                    <button type="submit" class="btn-cadastro">CRIAR CONTA</button>
+                    
+                    <div class="login-link">
+                        <p>Já tem uma conta? <a href="loginCliente.html">Faça login</a></p>
+                    </div>
                 </form>
             </div>
         </div>

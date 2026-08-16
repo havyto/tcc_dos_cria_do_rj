@@ -741,6 +741,9 @@ if (!empty($_POST['acao3'])) {
             <td>Título</td>
             <td>Email Empresarial</td>
             <td>Gênero</td>
+            <td>Núcleos</td>
+            <td>Threads</td>
+            <td>Frequência</td>
             <td>RAM (GB)</td>
             <td>VRAM (GB)</td>
             <td>Armazenamento</td>
@@ -760,11 +763,12 @@ if (!empty($_POST['acao3'])) {
             $titulo = $linha['titulo'];
             $empresa_email = $linha['empresa_email'];
             $genero_resultado = $linha['genero'];
+            $nucleos = $linha['nucleos'];
+        	$threads = $linha['threads'];
+        	$frequencia = $linha['frequencia'];
             $ram_gb = $linha['ram_gb'];
             $vram_gb = $linha['vram_gb'];
             $armazenamento = $linha['armazenamento'];
-
-
             echo "
 
             <tr>
@@ -773,6 +777,9 @@ if (!empty($_POST['acao3'])) {
                 <td>$titulo</td>
                 <td>$empresa_email</td>
                 <td>$genero_resultado</td>
+                <td>$nucleos</td>
+                <td>$threads</td>
+                <td>$frequencia</td>
                 <td>$ram_gb</td>
                 <td>$vram_gb</td>
                 <td>$armazenamento</td>

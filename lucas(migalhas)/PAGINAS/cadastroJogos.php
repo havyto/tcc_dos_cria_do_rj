@@ -33,15 +33,15 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
 
             <li><a href="perfil.php">Perfil</a></li>
             <li><a href="suporte.php">Suporte</a></li>
-            <li><a href="loginCliente.html">Login</a></li>
-            <li><a href="cadastroCliente.html">Cadastro</a></li>
+            <li><a href="loginCliente.php">Login</a></li>
+            <li><a href="cadastroCliente.php">Cadastro</a></li>
             <li><a href="../XAMP/logout.php">SAIR</a></li>
 
         </ul>
     </nav>
     <div class="container">
         <div class="logo-container">
-            <img src="../ASSETS/IMG/logo.png.png" alt="Ghost Gamer" class="logo-img">
+            <img src="../ASSETS/IMG/logo.png" alt="Ghost Gamer" class="logo-img">
             <span class="logo-text"><a href="../index.php">GHOST GAMER</a></span>
         </div>
         <!-- Apenas Cadastro Form - Centralizado -->

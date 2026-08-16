@@ -18,7 +18,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
     <!-- HEADER -->
     <header class="header">
         <div class="logo-container">
-            <img src="ASSETS/IMG/logo.png.png" class="logo-img">
+            <img src="ASSETS/IMG/logo.png" class="logo-img">
             <span class="logo-text">
                 <a href="index.php">GHOST GAMER</a>
             </span>
@@ -47,8 +47,8 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
 
             <li><a href="PAGINAS/perfil.php">Perfil</a></li>
             <li><a href="PAGINAS/suporte.php">Suporte</a></li>
-            <li><a href="PAGINAS/loginCliente.html">Login</a></li>
-            <li><a href="PAGINAS/cadastroCliente.html">Cadastro</a></li>
+            <li><a href="PAGINAS/loginCliente.php">Login</a></li>
+            <li><a href="PAGINAS/cadastroCliente.php">Cadastro</a></li>
             <li><a href="XAMP/logout.php">SAIR</a></li>
 
         </ul>

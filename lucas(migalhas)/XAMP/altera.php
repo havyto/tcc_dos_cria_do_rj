@@ -40,6 +40,8 @@
         cep = '$cep', pais = '$pais' where id_empresa = '$cod'";
     }
     if($pagina_anterior == "http://localhost/lucas(migalhas)/XAMP/alteraJogo.php"){
+
+        $cod = $_POST['id_jogo'];
         $titulo = $_POST['titulo'];
         $empresa_email = $_POST['empresa_email'];
         $genero = $_POST['genero'];
@@ -51,7 +53,8 @@
         $armazenamento = $_POST['armazenamento'];
         
         $sql = "update jogo set titulo= '$titulo', empresa_email = '$empresa_email', genero = '$genero', 
-        nucleos = '$nucleos', threads = '$threads', frequencia = '$frequencia', ram_gb = '$ram_gb', vram_gb = '$vram_gb', armazenamento = '$armazenamento' where id_jogo ='$cod'";
+        nucleos = '$nucleos', threads = '$threads', frequencia = '$frequencia', ram_gb = '$ram_gb', vram_gb = '$vram_gb',
+         armazenamento = '$armazenamento' where id_jogo ='$cod'";
 
     }
     mysql_query($sql);
