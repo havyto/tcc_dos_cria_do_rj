@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+error_reporting(E_ALL & ~E_DEPRECATED);
 // pega tipo do usuário
 $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuario";
 ?>
@@ -53,18 +53,65 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
 
     <!-- GRID DE JOGOS -->
     <div class="grid-jogos">
-        <a href="#" class="card">Ação</a>
-        <a href="#" class="card">Mistério</a>
-        <a href="#" class="card">Terror</a>
-        <a href="#" class="card">Puzzle</a>
-        <a href="#" class="card">RPG</a>
-        <a href="#" class="card">FPS</a>
-        <a href="#" class="card">Aventura</a>
-        <a href="#" class="card">Luta</a>
-        <a href="#" class="card">MOBA</a>
+        <?php 
+        mysql_connect("localhost", "root", "");
+        mysql_select_db("ghost_gamer");
+        $sql = "SELECT DISTINCT genero from jogo ORDER BY genero ";
+        $result_categoria = mysql_query($sql);
+        if(mysql_num_rows($result_categoria) > 0){
+            while ($linha = mysql_fetch_assoc($result_categoria)){
+                $categoria = $linha['genero'];
+                echo"<a href='categoria.php?genero=" . urlencode($categoria) . "' class='card'>$categoria</a>";
+            }
+        }
+        ?>
     </div>
 
-</div>
+    <?php
+
+    if (isset($_GET["genero"])) {
+
+        $genero = mysql_real_escape_string($_GET["genero"]);
+
+    ?>
+        <h2>
+            JOGOS DE <?php echo htmlspecialchars($genero); ?>
+        </h2>
+        <div class="games-grid">
+
+            <?php
+            $sql = "SELECT *
+                    FROM jogo
+                    WHERE genero = '$genero'
+                    ORDER BY titulo";
+            $resultado = mysql_query($sql);
+
+            if (mysql_num_rows($resultado) == 0) {
+                echo "<p>Nenhum jogo encontrado nesta categoria.</p>";
+            } else {
+                while ($jogo = mysql_fetch_assoc($resultado)) {
+            ?>
+                    <div class="game-card">
+                        <h3>
+                            <?php echo htmlspecialchars($jogo["titulo"]); ?>
+                        </h3>
+                        <p>
+                            <?php echo htmlspecialchars($jogo["genero"]); ?>
+                        </p>
+                        <a href="telaJogo.php?id=<?php echo $jogo["id_jogo"]; ?>">
+                            VER JOGO
+                        </a>
+                    </div>
+            <?php
+                }
+            }
+            ?>
+        </div>
+    <?php
+    }
+
+    ?>
+
 
     <script src="../ASSETS/JS/categoria.JS"></script>
 </body>
