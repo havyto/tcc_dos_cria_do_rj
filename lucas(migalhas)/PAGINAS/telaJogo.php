@@ -1,8 +1,26 @@
 <?php
 session_start();
-
+error_reporting(E_ALL & ~E_DEPRECATED);
+mysql_connect("localhost", "root", "");
+mysql_select_db("ghost_gamer");
 // pega tipo do usuário
 $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuario";
+if (!isset($_GET["id"])) { die("Jogo não encontrado."); } 
+    $id_jogo = mysql_real_escape_string($_GET["id"]);
+    $sql = "SELECT * FROM jogo WHERE id_jogo = '$id_jogo'";
+
+    $resultado = mysql_query($sql);
+
+    $jogo = mysql_fetch_assoc($resultado); 
+    $titulo = $jogo["titulo"]; 
+    $empresa_email = $jogo["empresa_email"]; 
+    $genero = $jogo["genero"]; 
+    $nucleos = $jogo["nucleos"]; 
+    $threads = $jogo["threads"]; 
+    $frequencia = $jogo["frequencia"]; 
+    $ram_gb = $jogo["ram_gb"]; 
+    $vram_gb = $jogo["vram_gb"]; 
+    $armazenamento = $jogo["armazenamento"];
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +28,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghost Gamer - Tela de Jogo</title>
+    <title><?php echo htmlspecialchars($titulo); ?> - Ghost Gamer</title>
     <link rel="stylesheet" href="../ASSETS/CSS/telajogo.css">
 </head>
 <body>
@@ -48,69 +66,123 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
         </ul>
     </nav>
 
-    <div class="container-jogo">
+        <main class="container-jogo">
+            <section class="topo-jogo">
+                <div class="imagem-jogo">
+                    <span>Imagem do jogo</span>
 
-    
-    <div class="topo-jogo">
+                </div>
+                <div class="informacoes-jogo">
+                    <h1>
+                        <?php echo htmlspecialchars($titulo); ?>
+                    </h1>
+                    <p class="genero-jogo">
+                        <?php echo htmlspecialchars($genero); ?>
+                    </p>
+                    <p class="empresa-jogo">
+                        Desenvolvedor:
+                        <?php echo htmlspecialchars($empresa_email); ?>
+                    </p>
+                    <div class="acoes-jogo">
+                        <button class="btn-download">
+                            BAIXAR AGORA
+                        </button>
 
-        
-        <div class="imagem-jogo">
-            <span>Imagem do jogo</span>
-        </div>
+                        <a href="#">
+                            ♡ Favoritar
+                        </a>
+                    </div>
+                </div>
+            </section>
 
-        
-        <div class="acoes-jogo">
-            <button class="btn-download">BAIXAR AGORA</button>
-            <a href="#">Favoritar</a>
-            <a href="#">Desenvolvedores</a>
-        </div>
+            <section class="meio-jogo">
+                <div class="descricao-jogo">
+                    <h2>
+                        Descrição do jogo
+                    </h2>
+                    <p>
+                        <?php echo htmlspecialchars($titulo); ?>
+                        é um jogo do gênero
+                        <?php echo htmlspecialchars($genero); ?>.
+                    </p>
+                    <p>
+                        Para obter mais informações sobre o jogo,
+                        consulte os requisitos mínimos apresentados
+                        abaixo.
+                    </p>
+                </div>
+                <div class="idiomas-jogo">
+                    <h3>
+                        Informações
+                    </h3>
+                    <ul>
+                        <li>
+                            Gênero:
+                            <?php echo htmlspecialchars($genero); ?>
+                        </li>
+                        <li>
+                            Empresa:
+                            <?php echo htmlspecialchars($empresa_email); ?>
+                        </li>
+                    </ul>
+                </div>
+            </section>
 
-    </div>
-
-    
-    <div class="meio-jogo">
-
-        
-        <div class="descricao-jogo">
-            <h2><b>Descrição do jogo</b></h2>
-            <p>
-                Aqui vai a descrição do jogo. Clique para expandir...
-            </p>
-
-            
-            <div class="cards-jogo">
-                <div class="card">Expansão 1</div>
-                <div class="card">Expansão 2</div>
-                <div class="card">Expansão 3</div>
-            </div>
-        </div>
-
-        
-        <div class="idiomas-jogo">
-            <h3>Idiomas</h3>
-            <ul>
-                <li>Inglês</li>
-                <li>Português</li>
-            </ul>
-        </div>
-
-    </div>
-
-    
-    <div class="requisitos-jogo">
-        <h2>Requisitos para jogar:</h2>
-
-        <ul>
-            <li>Processador: mínimo i3</li>
-            <li>Memória RAM: 8GB</li>
-            <li>Placa de vídeo: integrada</li>
-            <li>Armazenamento: 20GB</li>
-        </ul>
-    </div>
-
-</div>
-
-
+            <section class="requisitos-jogo">
+                <h2>
+                    Requisitos para jogar
+                </h2>
+                <div class="requisitos-grid">
+                    <div class="requisito">
+                        <strong>
+                            Processador
+                        </strong>
+                        <span>
+                            <?php echo $nucleos; ?>
+                            núcleos /
+                            <?php echo $threads; ?>
+                            threads
+                        </span>
+                    </div>
+                    <div class="requisito">
+                        <strong>
+                            Frequência
+                        </strong>
+                        <span>
+                            <?php echo $frequencia; ?>
+                            GHz
+                        </span>
+                    </div>
+                    <div class="requisito">
+                        <strong>
+                            Memória RAM
+                        </strong>
+                        <span>
+                            <?php echo $ram_gb; ?>
+                            GB
+                        </span>
+                    </div>
+                    <div class="requisito">
+                        <strong>
+                            Memória de vídeo
+                        </strong>
+                        <span>
+                            <?php echo $vram_gb; ?>
+                            GB
+                        </span>
+                    </div>
+                    <div class="requisito">
+                        <strong>
+                            Armazenamento
+                        </strong>
+                        <span>
+                            <?php echo $armazenamento; ?>
+                            GB
+                        </span>
+                    </div>
+                </div>
+            </section>
+        </main>
 
     <footer>
         <p>© 2026 - Ghost Gamer</p>
