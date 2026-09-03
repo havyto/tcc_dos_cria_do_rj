@@ -51,7 +51,7 @@
 									<option value="Aventura">Aventura</option>
 									<option value="RPG">RPG</option>
 									<option value="Estratégia">Estratégia</option>
-									<option value="Simulação">Simulação</option>
+									<option value="Simulacao">Simulação</option>
 									<option value="Esportes">Esportes</option>
 									<option value="Corrida">Corrida</option>
 									<option value="Luta">Luta</option>
