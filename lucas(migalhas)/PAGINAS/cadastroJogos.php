@@ -48,7 +48,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
         <div class="cadastro-wrapper">
             <div class="form-box cadastro-box">
                 <h2>CADASTRO</h2>
-                <form method="post" action="../XAMP/gravarcad.php">
+                <form method="post" action="../XAMP/gravarcad.php" enctype="multipart/form-data">
                     <div class="input-group">
                         <label>Titulo do Jogo</label>
                         <input type="text" name="titulo" placeholder="Digite Nome do Jogo">
@@ -128,6 +128,9 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
                         <label>Armazenamento</label>
                         <input type="text" name="armazenamento" placeholder="Digite a Quantidade de Armazenamento">
                     </div>
+                    <div class="input-group">
+                        <label>Foto</label>
+                        <input type="file" name="foto" accept="image/png, image/jpeg, image/jpg, image/webp" required>
                     <button type="submit" class="btn-cadastro">CADASTRAR JOGOS</button>
 
                 </form>

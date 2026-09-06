@@ -29,7 +29,7 @@ if (!isset($_GET["id"])) { die("Jogo não encontrado."); }
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($titulo); ?> - Ghost Gamer</title>
-    <link rel="stylesheet" href="../ASSETS/CSS/telajogo.css">
+    <link rel="stylesheet" href="../ASSETS/CSS/telajogo.css?v=2">
 </head>
 <body>
 
@@ -69,7 +69,7 @@ if (!isset($_GET["id"])) { die("Jogo não encontrado."); }
         <main class="container-jogo">
             <section class="topo-jogo">
                 <div class="imagem-jogo">
-                    <span>Imagem do jogo</span>
+                    <img src="../<?php echo $jogo['foto']; ?>" alt="<?php echo htmlspecialchars($jogo["titulo"]); ?>">
 
                 </div>
                 <div class="informacoes-jogo">
@@ -84,9 +84,10 @@ if (!isset($_GET["id"])) { die("Jogo não encontrado."); }
                         <?php echo htmlspecialchars($empresa_email); ?>
                     </p>
                     <div class="acoes-jogo">
-                        <button class="btn-download">
-                            BAIXAR AGORA
-                        </button>
+                        <form method="POST" action="../XAMP/adicionarBiblioteca.php">
+                        <input type="hidden" name="id_jogo" value="<?php echo $id_jogo; ?>">
+                        <button type="submit">Adicionar à biblioteca</button>
+                        </form>
 
                         <a href="#">
                             ♡ Favoritar
