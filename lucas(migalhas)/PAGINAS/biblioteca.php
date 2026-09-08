@@ -50,8 +50,6 @@ $resultado = mysql_query($sql);
 <nav id="menu" class="menu">
     <ul>
         <li><a href="../index.php">Home</a></li>
-        <li><a href="biblioteca.php">Biblioteca</a></li>
-        <li><a href="categoria.php">Categoria</a></li>
 
         <?php if ($tipo === "admin") { ?>
             <li><a href="../XAMP/consulta.php">Consulta</a></li>
@@ -59,11 +57,14 @@ $resultado = mysql_query($sql);
             <li><a href="cadastroJogos.php">Cadastro de Jogos</a></li>
         <?php } ?>
 
+        <?php if (!empty($_SESSION["id"])) {?>
+        <li><a href="biblioteca.php">Biblioteca</a></li>
+        <li><a href="categoria.php">Categoria</a></li>
         <li><a href="perfil.php">Perfil</a></li>
         <li><a href="suporte.php">Suporte</a></li>
-        <li><a href="loginCliente.php">Login</a></li>
-        <li><a href="cadastroCliente.php">Cadastro</a></li>
         <li><a href="../XAMP/logout.php">SAIR</a></li>
+        <?php }?>
+        
     </ul>
 </nav>
 

@@ -32,22 +32,21 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
     <nav id="menu" class="menu">
         <ul>
             <li><a href="../index.php">Home</a></li>
-            <li><a href="biblioteca.php">Biblioteca</a></li>
-            <li><a href="categoria.php">Categoria</a></li>
 
-            <!-- ADMIN ONLY -->
             <?php if ($tipo === "admin") { ?>
                 <li><a href="../XAMP/consulta.php">Consulta</a></li>
                 <li><a href="../PAGINAS/cadastroEmpresa.php">Cadastro de Empresa</a></li>
                 <li><a href="cadastroJogos.php">Cadastro de Jogos</a></li>
             <?php } ?>
 
+            <?php if (!empty($_SESSION["id"])) {?>
+            <li><a href="biblioteca.php">Biblioteca</a></li>
+            <li><a href="categoria.php">Categoria</a></li>
             <li><a href="perfil.php">Perfil</a></li>
             <li><a href="suporte.php">Suporte</a></li>
-            <li><a href="loginCliente.php">Login</a></li>
-            <li><a href="cadastroCliente.php">Cadastro</a></li>
             <li><a href="../XAMP/logout.php">SAIR</a></li>
-
+            <?php }?>
+        
         </ul>
     </nav>
 

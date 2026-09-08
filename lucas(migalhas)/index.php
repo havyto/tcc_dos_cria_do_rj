@@ -34,10 +34,7 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
     <!-- MENU LATERAL -->
     <nav id="menu" class="menu">
         <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="PAGINAS/biblioteca.php">Biblioteca</a></li>
-            <li><a href="PAGINAS/categoria.php">Categoria</a></li>
-
+        <li><a href="index.php">Home</a></li>
             <!-- ADMIN ONLY -->
             <?php if ($tipo === "admin") { ?>
                 <li><a href="XAMP/consulta.php">Consulta</a></li>
@@ -45,11 +42,17 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
                 <li><a href="PAGINAS/cadastroJogos.php">Cadastro de Jogos</a></li>
             <?php } ?>
 
-            <li><a href="PAGINAS/perfil.php">Perfil</a></li>
-            <li><a href="PAGINAS/suporte.php">Suporte</a></li>
+            <?php if (!empty($_SESSION["id"])) {?>
+                <li><a href="PAGINAS/biblioteca.php">Biblioteca</a></li>
+                <li><a href="PAGINAS/categoria.php">Categoria</a></li>
+                <li><a href="PAGINAS/perfil.php">Perfil</a></li>
+                <li><a href="PAGINAS/suporte.php">Suporte</a></li>
+                <li><a href="XAMP/logout.php">SAIR</a></li>
+            <?php }?>
+
+            <?php if (empty($_SESSION["id"])) {?>
             <li><a href="PAGINAS/loginCliente.php">Login</a></li>
-            <li><a href="PAGINAS/cadastroCliente.php">Cadastro</a></li>
-            <li><a href="XAMP/logout.php">SAIR</a></li>
+            <?php }?>
 
         </ul>
     </nav>
