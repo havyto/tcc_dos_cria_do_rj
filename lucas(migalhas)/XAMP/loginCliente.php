@@ -47,13 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["nome"] = $usuario["cli_nome"];
             $_SESSION["administrador"] = $usuario["administrador"];
 
+            if (isset($_POST["lembrar"])) {
+                setcookie("lembrar_usuario", $usuario["id_cliente"], time() + 2592000, "/");
+            }
+
             header("Location: ../index.php");
-            exit;
-
-        } else {
-
-            // SENHA INCORRETA
-            header("Location: ../PAGINAS/loginCliente.html");
             exit;
 
         }

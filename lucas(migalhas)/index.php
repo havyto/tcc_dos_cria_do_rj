@@ -1,6 +1,38 @@
 <?php
 session_start();
 
+error_reporting(E_ALL & ~E_DEPRECATED);
+
+// CONEXÃO
+$id = mysql_connect("localhost", "root", "");
+
+if (!$id) {
+    die("Erro ao conectar: " . mysql_error());
+}
+
+mysql_select_db("ghost_gamer", $id);
+
+// VERIFICA COOKIE
+if (!isset($_SESSION["id"]) && isset($_COOKIE["lembrar_usuario"])) {
+
+    $id_cliente = $_COOKIE["lembrar_usuario"];
+
+    $sql = "SELECT id_cliente, cli_nome, administrador
+            FROM clientes
+            WHERE id_cliente = '$id_cliente'";
+
+    $resultado = mysql_query($sql);
+
+    if (mysql_num_rows($resultado) > 0) {
+
+        $usuario = mysql_fetch_assoc($resultado);
+
+        $_SESSION["id"] = $usuario["id_cliente"];
+        $_SESSION["nome"] = $usuario["cli_nome"];
+        $_SESSION["administrador"] = $usuario["administrador"];
+    }
+}
+
 // pega tipo do usuário
 $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuario";
 ?>

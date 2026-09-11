@@ -45,6 +45,10 @@ $tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuari
             <li><a href="suporte.php">Suporte</a></li>
             <li><a href="../XAMP/logout.php">SAIR</a></li>
             <?php }?>
+
+            <?php if (empty($_SESSION["id"])) {?>
+            <li><a href="../PAGINAS/loginCliente.php">Login</a></li>
+            <?php }?>
         
         </ul>
     </nav>
