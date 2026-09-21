@@ -16,12 +16,13 @@ if ($pagina_anterior == "http://localhost/lucas(migalhas)/PAGINAS/cadastroClient
     $nickname = $_POST['nickname'];
     $senha = $_POST['senha'];
     $hash = password_hash($senha, PASSWORD_DEFAULT);
+    $foto = "ASSETS/IMG/FotoPerfilPadrao.jpg";
 
 
     $sql = "insert into clientes 
-    (cli_nome, email, nickname, senha) 
+    (cli_nome, email, nickname, senha, foto) 
     values
-    ('$cli_nome', '$email', '$nickname', '$hash')";
+    ('$cli_nome', '$email', '$nickname', '$hash', '$foto')";
 }
 
 if ($pagina_anterior == "http://localhost/lucas(migalhas)/PAGINAS/cadastroEmpresa.php") {

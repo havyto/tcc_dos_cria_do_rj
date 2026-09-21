@@ -79,11 +79,15 @@ $total_jogos = mysql_num_rows($resultado_jogos);
     <section class="profile">
 
         <div class="profile-header">
-            <img src="../ASSETS/IMG/FotoPerfil.jpg" class="profile-img">
+            <img src="../<?php echo $usuario["foto"]; ?>" class="profile-img">
 
             <div class="profile-info-main">
                 <h1><?php echo htmlspecialchars($nick); ?></h1>
             </div>
+            <form method="POST" action="../XAMP/trocarFoto.php" enctype="multipart/form-data">
+                <input type="file" name="foto">
+                <button type="submit">Trocar foto</button>
+            </form>
         </div>
 
         <div class="profile-content">
