@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
 
         // USUÁRIO NÃO ENCONTRADO
-        header("Location: ../PAGINAS/loginCliente.html");
+        header("Location: ../PAGINAS/loginCliente.php");
         exit;
 
     }

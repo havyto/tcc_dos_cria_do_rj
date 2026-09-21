@@ -1,4 +1,9 @@
+<?php 
+session_start();
 
+// pega tipo do usuário
+$tipo = isset($_SESSION["administrador"]) ? $_SESSION["administrador"] : "usuario";
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,21 +19,23 @@
     <nav id="menu" class="menu">
         <ul>
             <li><a href="../index.php">Home</a></li>
-            <li><a href="biblioteca.php">Biblioteca</a></li>
-            <li><a href="categoria.php">Categoria</a></li>
-
-            <!-- ADMIN ONLY -->
             <?php if ($tipo === "admin") { ?>
                 <li><a href="../XAMP/consulta.php">Consulta</a></li>
                 <li><a href="../PAGINAS/cadastroEmpresa.php">Cadastro de Empresa</a></li>
                 <li><a href="cadastroJogos.php">Cadastro de Jogos</a></li>
             <?php } ?>
 
+            <?php if (!empty($_SESSION["id"])) {?>
+            <li><a href="biblioteca.php">Biblioteca</a></li>
+            <li><a href="categoria.php">Categoria</a></li>
             <li><a href="perfil.php">Perfil</a></li>
             <li><a href="suporte.php">Suporte</a></li>
-            <li><a href="loginCliente.php">Login</a></li>
-            <li><a href="cadastroCliente.php">Cadastro</a></li>
             <li><a href="../XAMP/logout.php">SAIR</a></li>
+            <?php }?>
+
+            <?php if (empty($_SESSION["id"])) {?>
+            <li><a href="../PAGINAS/loginCliente.php">Login</a></li>
+            <?php }?>
 
         </ul>
     </nav>
@@ -63,7 +70,7 @@
                     <button type="submit" class="btn-cadastro">CRIAR CONTA</button>
                     
                     <div class="login-link">
-                        <p>Já tem uma conta? <a href="loginCliente.html">Faça login</a></p>
+                        <p>Já tem uma conta? <a href="loginCliente.php">Faça login</a></p>
                     </div>
                 </form>
             </div>
