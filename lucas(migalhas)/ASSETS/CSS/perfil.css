@@ -3,32 +3,35 @@
     padding: 0;
     box-sizing: border-box;
 }
-a{
-    text-decoration: none; /* Remove o sublinhado */
-    color: white;         /* Faz o link herdar a cor do texto ao redor */
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
-
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #fff;
+    color: white;
     min-height: 100vh;
 }
 
-/* Header com logo fantasma */
+/* HEADER */
 .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: rgba(0, 0, 0, 0.8);
     padding: 20px;
-    text-align: center;
     border-bottom: 2px solid #ab58bc;
 }
+
 .logo-container {
     display: flex;
     align-items: center;
     gap: 12px;
     justify-content: flex-end;
-
+    width: 100%;
 }
 
 .logo-img {
@@ -43,7 +46,8 @@ body {
     font-weight: bold;
     letter-spacing: 2px;
 }
-/* Botão do menu */
+
+/* BOTÃO DO MENU */
 #menu-btn {
     font-size: 30px;
     background: #ab58bc;
@@ -65,7 +69,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Menu lateral */
+/* MENU LATERAL */
 .menu {
     position: fixed;
     top: 0;
@@ -102,11 +106,25 @@ body {
     transform: translateX(0);
 }
 
-.menu.ativo li:nth-child(1) { transition-delay: 0.05s; }
-.menu.ativo li:nth-child(2) { transition-delay: 0.1s; }
-.menu.ativo li:nth-child(3) { transition-delay: 0.15s; }
-.menu.ativo li:nth-child(4) { transition-delay: 0.2s; }
-.menu.ativo li:nth-child(5) { transition-delay: 0.25s; }
+.menu.ativo li:nth-child(1) {
+    transition-delay: 0.05s;
+}
+
+.menu.ativo li:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.menu.ativo li:nth-child(3) {
+    transition-delay: 0.15s;
+}
+
+.menu.ativo li:nth-child(4) {
+    transition-delay: 0.2s;
+}
+
+.menu.ativo li:nth-child(5) {
+    transition-delay: 0.25s;
+}
 
 .menu a {
     color: white;
@@ -118,18 +136,18 @@ body {
 }
 
 .menu a:hover {
-    color: #86269e;
+    color: #ab58bc;
     transform: translateX(10px);
 }
 
 .menu li:hover {
-    background: rgba(255, 107, 107, 0.1);
+    background: rgba(171, 88, 188, 0.1);
     border-radius: 8px;
 }
 
-/* Hero Section */
+/* HERO */
 .hero {
-    background: linear-gradient(135deg, #ff6b6b20, #1a1a2e);
+    background: linear-gradient(135deg, #ab58bc20, #1a1a2e);
     padding: 80px 20px;
     text-align: center;
     margin-top: 0;
@@ -143,7 +161,7 @@ body {
 .hero-content h1 {
     font-size: 48px;
     margin: 20px 0;
-    background: linear-gradient(45deg, #ab58bc, #ab58bc);
+    background: linear-gradient(45deg, #ab58bc, #d58be3);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -168,12 +186,12 @@ body {
 }
 
 .btn-download:hover {
-    background: #ab58bc;
+    background: #843ba9;
     transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 5px 20px rgba(171, 88, 188, 0.4);
 }
 
-/* Games Section */
+/* JOGOS */
 .games-section {
     padding: 50px 20px;
 }
@@ -201,13 +219,13 @@ body {
     text-align: center;
     transition: 0.3s;
     cursor: pointer;
-    border: 1px solid rgba(255, 107, 107, 0.3);
+    border: 1px solid rgba(171, 88, 188, 0.3);
 }
 
 .game-card:hover {
     transform: translateY(-10px);
     border-color: #ab58bc;
-    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2);
+    box-shadow: 0 10px 30px rgba(171, 88, 188, 0.2);
 }
 
 .game-img {
@@ -229,55 +247,35 @@ body {
     background: #ab58bc;
     color: white;
     border: none;
-    padding: 10px 25px;
-    border-radius: 25px;
+    padding: 10px 20px;
+    border-radius: 7px;
     cursor: pointer;
     transition: 0.3s;
     font-weight: bold;
 }
 
 .play-btn:hover {
-    background: #ab58bc;
+    background: #843ba9;
     transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-    background-color: #0f0f1a;
-    color: #ffffff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
-    border-top: 1px solid #ab58bc;
-}
-
-/* Overlay */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    z-index: 999;
-    display: none;
-}
-
-.overlay.ativo {
-    display: block;
 }
 
 /* PERFIL */
 .profile {
-    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
 }
 
-/* HEADER */
+/* CABEÇALHO DO PERFIL */
 .profile-header {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(171, 88, 188, 0.25);
+    border-radius: 12px;
 }
 
 .profile-img {
@@ -285,66 +283,125 @@ footer {
     height: 100px;
     border-radius: 10px;
     border: 2px solid #ab58bc;
+    object-fit: cover;
 }
 
 .profile-info-main h1 {
     font-size: 28px;
+    margin: 0;
 }
 
 .profile-info-main p {
     color: #aaa;
 }
 
-
-
-
-/* CONTEUDO */
+/* CONTEÚDO */
 .profile-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 20px;
+    gap: 25px;
 }
 
 /* ATIVIDADE */
+.activity {
+    min-width: 0;
+}
+
 .activity-header {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     margin-bottom: 15px;
     color: #ccc;
 }
 
+.activity-header h3 {
+    font-size: 22px;
+    color: white;
+}
+
+/* CARD DO JOGO */
 .activity-card {
     display: flex;
     align-items: center;
-    background: rgba(255,255,255,0.05);
-    padding: 15px;
+    gap: 18px;
+    padding: 12px;
+    margin-bottom: 12px;
+    min-height: 85px;
+    background: #1a1a2e;
+    border: 1px solid #333;
     border-radius: 10px;
-    margin-bottom: 15px;
-    border: 1px solid rgba(171,88,188,0.2);
+    overflow: hidden;
+    transition: 0.2s;
 }
 
+.activity-card:hover {
+    border-color: #ab58bc;
+    background: #20203a;
+    transform: translateY(-2px);
+}
+
+/* IMAGEM DO JOGO */
 .game-thumb {
     width: 120px;
-    height: 60px;
-    background: #222;
-    border-radius: 5px;
-    margin-right: 15px;
+    height: 70px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 7px;
+    background: #111;
+}
+
+.game-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* INFORMAÇÕES DO JOGO */
+.activity-info {
+    flex: 1;
+    min-width: 0;
 }
 
 .activity-info h4 {
-    margin-bottom: 5px;
+    margin: 0 0 7px 0;
+    font-size: 18px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .activity-info p {
+    margin: 0;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* BOTÃO JOGAR */
+.activity-card .play-btn {
+    padding: 9px 16px;
+    flex-shrink: 0;
+    font-size: 13px;
+}
+
+/* SEM JOGOS */
+.sem-jogos {
+    padding: 35px 20px;
+    text-align: center;
+    background: #1a1a2e;
+    border: 1px solid #333;
+    border-radius: 10px;
     color: #aaa;
 }
 
 /* LATERAL */
 .profile-side {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.45);
     padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #ab58bc30;
+    border-radius: 12px;
+    border: 1px solid rgba(171, 88, 188, 0.3);
+    height: fit-content;
 }
 
 .status {
@@ -353,13 +410,33 @@ footer {
     font-weight: bold;
 }
 
+/* BOXES LATERAIS */
 .side-box {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
-    padding: 10px;
-    background: rgba(255,255,255,0.05);
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(171, 88, 188, 0.15);
     border-radius: 8px;
+    transition: 0.2s;
+}
+
+.side-box:hover {
+    border-color: #ab58bc;
+    background: rgba(171, 88, 188, 0.08);
+}
+
+.side-box p {
+    margin: 0;
+    color: #ddd;
+}
+
+.side-box span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ab58bc;
 }
 
 /* CONQUISTAS */
@@ -373,7 +450,7 @@ footer {
     margin-bottom: 5px;
 }
 
-/* Barra */
+/* BARRA */
 .progress-bar {
     width: 100%;
     height: 8px;
@@ -385,12 +462,12 @@ footer {
 
 .progress {
     height: 100%;
-    width: 62%; /* 85/137 ≈ 62% */
+    width: 62%;
     background: linear-gradient(90deg, #ab58bc, #6a0dad);
     transition: width 0.5s ease;
 }
 
-/* Ícones */
+/* ÍCONES */
 .achievements-icons {
     display: flex;
     gap: 5px;
@@ -411,14 +488,7 @@ footer {
     background: #444;
 }
 
-/* Ajuste do header */
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Barra de pesquisa */
+/* BARRA DE PESQUISA */
 .search-box {
     flex: 1;
     display: flex;
@@ -431,19 +501,94 @@ footer {
     padding: 10px 15px;
     border-radius: 25px;
     border: 1px solid #ab58bc;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.05);
     color: white;
     outline: none;
     transition: 0.3s;
 }
 
-/* Efeito ao clicar */
 .search-box input:focus {
     border-color: #ab58bc;
     box-shadow: 0 0 10px #ab58bc80;
 }
 
-/* Placeholder */
 .search-box input::placeholder {
     color: #aaa;
+}
+
+/* FOOTER */
+footer {
+    background-color: #0f0f1a;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    border-top: 1px solid #ab58bc;
+}
+
+/* OVERLAY */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.ativo {
+    display: block;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 800px) {
+    .profile-content {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-side {
+        width: 100%;
+    }
+
+    .profile {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .activity-card {
+        gap: 12px;
+    }
+
+    .game-thumb {
+        width: 90px;
+        height: 60px;
+    }
+
+    .activity-info h4 {
+        font-size: 16px;
+    }
+
+    .activity-card .play-btn {
+        padding: 8px 10px;
+    }
+
+    .profile-header {
+        padding: 15px;
+    }
+
+    .profile-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-info-main h1 {
+        font-size: 22px;
+    }
+
+    .search-box input {
+        width: 50%;
+    }
 }
