@@ -116,9 +116,11 @@ $total_jogos = mysql_num_rows($resultado_jogos);
                             <p><?php echo htmlspecialchars($jogo["genero"]); ?></p>
                         </div>
 
-                        <button class="play-btn">
+                        <a href="telaJogo.php?id=<?php echo $jogo["id_jogo"]; ?>"">
+                        <button class="play-btn" type="submit">
                             JOGAR
                         </button>
+                        </a>
 
                     </div>
 
