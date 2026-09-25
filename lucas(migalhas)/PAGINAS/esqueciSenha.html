@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Gamer - Esqueci Senha</title>
+    <link rel="stylesheet" href="../ASSETS/CSS/ghost.css">
+    <link rel="stylesheet" href="../ASSETS/CSS/loginCliente.css">
+</head>
+<body>
+
+    <!-- HEADER (esta página é HTML puro, então o header é escrito aqui; nas páginas PHP ele vem de INCLUDES/header.php) -->
+    <header class="header sem-busca">
+        <button id="menu-btn" type="button" aria-label="Abrir menu">☰</button>
+
+        <a href="../index.php" class="logo-aba" aria-label="Ghost Gamer - ir para a Home">
+            <img src="../ASSETS/IMG/logo.png" alt="" class="logo-img">
+            <span class="logo-text">GHOST GAMER</span>
+        </a>
+
+        <nav id="menu" class="menu" aria-label="Menu principal">
+            <ul class="menu-principal">
+                <li><a href="../index.php">Home</a></li>
+                <li><a href="suporte.php">Suporte</a></li>
+            </ul>
+            <ul class="menu-conta">
+                <li><a href="../XAMP/logout.php" class="menu-sair" title="Sair"><span class="ico ico-sair" aria-hidden="true"></span><span class="rotulo">Sair</span></a></li>
+                <li><a href="loginCliente.php" class="menu-entrar"><span class="ico ico-entrar" aria-hidden="true"></span>Entrar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- Apenas Login Form - Centralizado -->
+        <div class="login-wrapper auth">
+            <div class="form-box login-box auth-card">
+
+                <div class="auth-tabs">
+                    <a href="loginCliente.php">Entrar</a>
+                    <a href="cadastroCliente.php">Cadastrar</a>
+                </div>
+
+                <h1>Recuperar Senha</h1>
+                <p class="auth-sub">Informe o email da sua conta.</p>
+
+                <form>
+                    <div class="input-group">
+                        <label for="campoEmail">Email</label>
+                        <input type="email" id="campoEmail" placeholder="Digite seu email" autocomplete="email">
+                    </div>
+                    <button type="submit" class="btn btn-primario btn-bloco btn-login">Mandar Codigo do Email</button>
+
+                    <div class="auth-links">
+                        <a href="loginCliente.php"><span class="ico ico-seta-esq" aria-hidden="true"></span> Voltar para o login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grade">
+            <div class="footer-marca">
+                <div class="logo-linha">
+                    <img src="../ASSETS/IMG/logo.png" alt="" class="logo-img">
+                    <span class="logo-text">GHOST GAMER</span>
+                </div>
+                <p>Descubra jogos e confira os requisitos antes de jogar.</p>
+            </div>
+            <div>
+                <h4>NAVEGAR</h4>
+                <ul><li><a href="../index.php">Home</a></li></ul>
+            </div>
+            <div>
+                <h4>CONTA</h4>
+                <ul>
+                    <li><a href="loginCliente.php">Entrar</a></li>
+                    <li><a href="cadastroCliente.php">Criar conta</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>AJUDA</h4>
+                <ul>
+                    <li><a href="suporte.php">Central de suporte</a></li>
+                    <li><a href="esqueciSenha.html">Esqueci minha senha</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer-copia">© 2026 Ghost Gamer — Projeto de TCC</p>
+    </footer>
+
+    <script src="../ASSETS/JS/index.js"></script>
+</body>
+</html>

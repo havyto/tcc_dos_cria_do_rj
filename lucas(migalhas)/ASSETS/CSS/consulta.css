@@ -1,0 +1,57 @@
+/* ADMINISTRAÇÃO — página de consulta (tabelas de empresas, clientes e jogos).
+   O HTML das tabelas é gerado pelo PHP (consulta.php), então o estilo usa
+   seletores de elemento dentro de .admin. Cores e botões vêm do ghost.css. */
+
+.admin { padding-bottom: 8px; }
+
+/* botões Mostrar Empresas / Clientes / Jogos */
+.abas-consulta { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 8px; }
+.abas-consulta input[type="submit"] { background: var(--card-2); border-color: var(--borda-forte); box-shadow: none; }
+.abas-consulta input[type="submit"]:hover { border-color: var(--roxo); filter: none; }
+
+/* formulário de pesquisa e filtros */
+.admin form.filtros {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    margin: 22px 0 8px; padding: 16px;
+    background: var(--card); border: 1px solid var(--borda); border-radius: 16px;
+}
+.admin form.filtros input[type="text"] { flex: 1 1 220px; width: auto; }
+.admin form.filtros select { flex: 0 1 200px; width: auto; }
+.admin form.filtros br { display: none; }
+
+/* tabela com rolagem horizontal (muitas colunas) */
+.tabela-scroll {
+    margin: 18px 0; overflow-x: auto;
+    background: var(--card); border: 1px solid var(--borda); border-radius: 16px;
+}
+.admin table { width: 100%; border-collapse: collapse; }
+.admin caption {
+    padding: 16px 18px; text-align: left;
+    font: 700 16px var(--fonte-titulo); letter-spacing: 0.02em;
+}
+.admin td {
+    padding: 11px 16px; font-size: 16px; white-space: nowrap;
+    border-top: 1px solid var(--borda); vertical-align: middle;
+}
+/* primeira linha = cabeçalho da tabela */
+.admin tr:first-child td {
+    position: sticky; top: 0;
+    font-weight: 700; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--roxo-claro); background: var(--card-2);
+}
+.admin tr:not(:first-child):hover td { background: rgba(171, 88, 188, 0.07); }
+
+/* botões Alterar / Excluir dentro da tabela */
+.admin td form { margin: 0; }
+.admin td input[type="submit"] { min-height: 34px; padding: 5px 14px; font-size: 15px; border-radius: 9px; }
+.admin td input[type="submit"][value="Alterar"] { background: var(--card-2); border: 1px solid var(--borda-forte); }
+.admin td input[type="submit"][value="Alterar"]:hover { border-color: var(--roxo); filter: none; }
+.admin td input[type="submit"][value="Excluir"] { color: var(--erro); background: transparent; border: 1px solid rgba(248, 113, 113, 0.5); }
+.admin td input[type="submit"][value="Excluir"]:hover { background: rgba(248, 113, 113, 0.12); border-color: var(--erro); filter: none; }
+
+/* relatório em PDF */
+.admin form[action="gerarPDF.php"] { margin: 6px 0 4px; }
+.admin form[action="gerarPDF.php"] input[type="submit"] { background: var(--card-2); border: 1px solid var(--borda-forte); }
+.admin form[action="gerarPDF.php"] input[type="submit"]:hover { border-color: var(--roxo); filter: none; }
+
+.voltar-consulta { margin-top: 24px; }

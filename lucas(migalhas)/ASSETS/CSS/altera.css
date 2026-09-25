@@ -1,0 +1,14 @@
+/* ADMINISTRAÇÃO — páginas de alteração (clientes, empresas e jogos).
+   Campos, botões e cartão vêm do ghost.css; aqui só o layout. */
+
+.admin .cadastro-wrapper { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; margin-top: 26px; }
+.admin .cadastro-box { width: 100%; max-width: 680px; }
+
+/* o HTML antigo usa <br> entre os campos: não queremos espaço extra */
+.admin .cadastro-box br { display: none; }
+
+/* o campo "Código" é só de leitura */
+.admin .cadastro-box input[disabled] { color: var(--texto-3); border-style: dashed; }
+
+/* GRAVAR e LIMPAR lado a lado */
+.admin .cadastro-box input[type="submit"], .admin .cadastro-box input[type="reset"] { margin: 8px 12px 0 0; }

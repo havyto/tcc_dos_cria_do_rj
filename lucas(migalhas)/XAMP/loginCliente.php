@@ -47,19 +47,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["nome"] = $usuario["cli_nome"];
             $_SESSION["administrador"] = $usuario["administrador"];
 
-            echo "sucesso";
-            exit;
+            if (isset($_POST["lembrar"])) {
+                setcookie("lembrar_usuario", $usuario["id_cliente"], time() + 2592000, "/");
+            }
 
-        } else {
-
-            echo "senha";
+            header("Location: ../index.php");
             exit;
 
         }
 
     } else {
 
-        echo "usuario";
+        // USUÁRIO NÃO ENCONTRADO
+        header("Location: ../PAGINAS/loginCliente.php");
         exit;
 
     }
